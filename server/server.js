@@ -46,6 +46,8 @@ app.get('/auth/callback', async (req,res) => {
 });
 
 app.get('/api/logout', controller.logout);
+app.get('/api/user-data', controller.userData);
+app.get('/api/products', controller.getAllProducts);//connect this to redux! store all products from database into the products array in the reducer.
 
 
 app.listen(SERVER_PORT, () => {

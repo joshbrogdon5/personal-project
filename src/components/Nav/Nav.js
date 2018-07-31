@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import {withRouter} from 'react-router-dom';
+import {withRouter, Link} from 'react-router-dom';
 
 
 
@@ -16,6 +16,7 @@ class Nav extends Component {
             <div>
                 Nav
                 <button onClick={() => this.logout()}>Logout</button>
+                <Link to='/accountpage'><button>Account</button></Link>
             </div>
         )
     }
