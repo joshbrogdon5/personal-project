@@ -1,9 +1,20 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
+import {connect} from 'react-redux';
+import {storeProducts, activeCart} from './../../ducks/reducer';
 
 
 
 class Dashboard extends Component {
+
+    componentDidMount(){
+        axios.get('/api/products').then(results => {
+            this.props.storeProducts(results.data.products)
+            this.props.activeCart(results.data.cart)
+        })
+    }
+
     render(){
         return(
             <div>
@@ -14,4 +25,5 @@ class Dashboard extends Component {
     }
 }
 
-export default Dashboard;
+
+export default connect(null, {storeProducts, activeCart})(Dashboard);

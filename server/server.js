@@ -4,9 +4,14 @@ const bodyParser = require('body-parser');
 const massive = require('massive');
 const axios = require('axios');
 require('dotenv').config();
+const cors = require('cors');
 const controller = require('../server/controller')
 
 const app = express();
+
+app.use(bodyParser.json());
+
+app.use(cors());
 
 const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING, REACT_APP_DOMAIN, REACT_APP_CLIENT_ID, CLIENT_SECRET} = process.env;
 
@@ -47,7 +52,7 @@ app.get('/auth/callback', async (req,res) => {
 
 app.get('/api/logout', controller.logout);
 app.get('/api/user-data', controller.userData);
-app.get('/api/products', controller.getAllProducts);//connect this to redux! store all products from database into the products array in the reducer.
+app.get('/api/products', controller.getAllProducts);
 
 
 app.listen(SERVER_PORT, () => {
