@@ -53,6 +53,7 @@ app.get('/auth/callback', async (req,res) => {
 app.get('/api/logout', controller.logout);
 app.get('/api/user-data', controller.userData);
 app.get('/api/products', controller.getAllProducts);
+app.get('/api/display-all', controller.displayAll)
 
 
 app.listen(SERVER_PORT, () => {

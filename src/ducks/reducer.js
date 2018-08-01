@@ -9,6 +9,7 @@ const STORE_ALL_PRODUCTS = 'STORE_ALL_PRODUCTS';
 const ADD_TO_CART = 'ADD_TO_CART';
 const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 const ACTIVE_CART = 'ACTIVE_CART';
+const STORE_CART_DATA = 'STORE_CART_DATA';
 
 export const updateUserData = (user) => ({
   type: UPDATE_USER_DATA,
@@ -35,9 +36,10 @@ export const activeCart = (cart) => ({
   payload: cart
 })
 
-
-
-
+export const storeCartData = (cartData) => ({
+  type: STORE_CART_DATA,
+  payload: cartData
+})
 
 
 export default function reducer(state = initialState, action){
@@ -54,6 +56,8 @@ export default function reducer(state = initialState, action){
         newArray.splice(action.index, 1);
         return Object.assign({}, state, {shoppingCart: newArray})
     case ACTIVE_CART:
+        return Object.assign({}, state, {shoppingCart: action.payload})
+    case STORE_CART_DATA:
         return Object.assign({}, state, {shoppingCart: action.payload})
 
     default: return state

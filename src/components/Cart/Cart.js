@@ -1,11 +1,19 @@
 import React, {Component} from 'react';
 import Nav from '../Nav/Nav';
-import {removeFromCart} from '../../ducks/reducer';
+import {removeFromCart, storeCartData} from '../../ducks/reducer';
 import {connect} from 'react-redux';
+import axios from 'axios';
 
 
 
 class Cart extends Component {
+
+    componentDidMount(){
+        axios.get('/api/display-all').then(results => {
+            this.props.storeCartData(results.data)
+        })
+    }
+
     render(){
     let shoppingCartDisplay = this.props.shoppingCart.map((e,i) => {
         return(
@@ -40,4 +48,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, {removeFromCart})(Cart);
+export default connect(mapStateToProps, {removeFromCart, storeCartData})(Cart);

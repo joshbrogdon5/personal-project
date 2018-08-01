@@ -12,6 +12,7 @@ module.exports = {
     },
     getAllProducts: (req,res,next) => {
         const dbInstance = req.app.get('db');
+
         dbInstance.get_products()
             .then(products => {
                 dbInstance.get_cartid(req.session.user.id)
@@ -27,6 +28,16 @@ module.exports = {
             .catch(err => {
                 res.status(500).send({errorMessage: "Something went wrong!"})
                 console.log(err);
+            })
+    },
+    displayAll: (req,res,next) => {
+        const dbInstance = req.app.get('db');
+
+        dbInstance.join_all()
+            .then(all => res.status(200).send(all))
+            .catch(err => {
+                res.status(500).send({errorMessage: "Something went wrong!"})
+                console.log(err)
             })
     }
 }

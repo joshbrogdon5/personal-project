@@ -18,6 +18,7 @@ class Nav extends Component {
                 <button onClick={() => this.logout()}>Logout</button>
                 <Link to='/accountpage'><button>Account</button></Link>
                 <Link to='/cart'><button>Cart</button></Link>
+                <Link to='/storefront'><button>Store</button></Link>
             </div>
         )
     }
