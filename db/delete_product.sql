@@ -1,0 +1,1 @@
+delete from orders where product_id = $1 and cart_id = $2;

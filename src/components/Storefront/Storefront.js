@@ -1,11 +1,17 @@
 import React, {Component} from 'react';
 import Nav from '../Nav/Nav';
 import {connect} from 'react-redux';
-import {addToCart} from './../../ducks/reducer';
+import axios from 'axios';
 
 
 class Storefront extends Component {
 
+
+    addToCart(e){
+        axios.post('/api/add-to-cart', {id: e.id}).then(results => {
+            console.log(results)
+        })
+    }
 
 
     render(){
@@ -16,7 +22,7 @@ class Storefront extends Component {
                     <img src={e.image} alt="" />
                     <h2>{e.description}</h2>
                     <h3>{`$${e.price}.00`}</h3>
-                    <button onClick={() => this.props.addToCart(e)}>Add to Cart</button>
+                    <button onClick={() => this.addToCart(e)}>Add to Cart</button>
                 </div>
             )
         })
@@ -35,4 +41,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, {addToCart})(Storefront);
+export default connect(mapStateToProps)(Storefront);

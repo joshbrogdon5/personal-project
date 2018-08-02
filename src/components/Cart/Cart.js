@@ -14,6 +14,12 @@ class Cart extends Component {
         })
     }
 
+    deleteFromCart(id){
+        axios.delete(`/api/product/${id}`).then(results => {
+            this.props.storeCartData(results.data)
+        })
+    }
+
     render(){
     let shoppingCartDisplay = this.props.shoppingCart.map((e,i) => {
         return(
@@ -23,7 +29,7 @@ class Cart extends Component {
                     <h2>{e.title}</h2>
                     <h2>{`$${e.price}.00`}</h2>
                     <div>
-                        <button onClick={() => this.props.removeFromCart(e)}>Remove Item</button>
+                        <button onClick={() => this.deleteFromCart(e.id)}>Remove Item</button>
                     </div>
                 </div>
             </div>

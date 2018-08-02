@@ -53,7 +53,9 @@ app.get('/auth/callback', async (req,res) => {
 app.get('/api/logout', controller.logout);
 app.get('/api/user-data', controller.userData);
 app.get('/api/products', controller.getAllProducts);
-app.get('/api/display-all', controller.displayAll)
+app.get('/api/display-all', controller.displayAll);
+app.post('/api/add-to-cart', controller.addToCart);
+app.delete('/api/product/:id', controller.deleteProduct);
 
 
 app.listen(SERVER_PORT, () => {

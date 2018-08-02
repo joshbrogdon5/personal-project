@@ -47,7 +47,6 @@ export default function reducer(state = initialState, action){
     case UPDATE_USER_DATA:
         return Object.assign({}, state, {user: action.payload})
     case STORE_ALL_PRODUCTS:
-        console.log(action.payload)
         return Object.assign({}, state, {products: action.payload})
     case ADD_TO_CART:
         return Object.assign({}, state, {shoppingCart: [...state.shoppingCart, action.payload]})
@@ -58,6 +57,7 @@ export default function reducer(state = initialState, action){
     case ACTIVE_CART:
         return Object.assign({}, state, {shoppingCart: action.payload})
     case STORE_CART_DATA:
+    console.log(action.payload)
         return Object.assign({}, state, {shoppingCart: action.payload})
 
     default: return state
