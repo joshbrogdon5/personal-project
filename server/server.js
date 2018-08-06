@@ -5,7 +5,9 @@ const massive = require('massive');
 const axios = require('axios');
 require('dotenv').config();
 const cors = require('cors');
-const controller = require('../server/controller')
+const config = require('./config');
+const stripe = require('stripe')(config.secret_key);
+const controller = require('../server/controller');
 
 const app = express();
 
@@ -56,6 +58,9 @@ app.get('/api/products', controller.getAllProducts);
 app.get('/api/display-all', controller.displayAll);
 app.post('/api/add-to-cart', controller.addToCart);
 app.delete('/api/product/:id', controller.deleteProduct);
+
+//STRIPE:
+app.post('/api/payment', controller.makePayment);
 
 
 app.listen(SERVER_PORT, () => {

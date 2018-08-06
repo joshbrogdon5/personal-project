@@ -3,10 +3,17 @@ import Nav from '../Nav/Nav';
 import {removeFromCart, storeCartData} from '../../ducks/reducer';
 import {connect} from 'react-redux';
 import axios from 'axios';
+import stripe from './../../stripeKey';
+import StripeCheckout from 'react-stripe-checkout';
 
 
 
 class Cart extends Component {
+    onToken = (token) => {
+        token.card = void 0;
+        console.log('token', token);
+        axios.post('http://localhost:3333/api/payment', { token, amount: 100 }).then(response => {alert('Gucci Gang')});
+    }
 
     componentDidMount(){
         axios.get('/api/display-all').then(results => {
@@ -39,7 +46,14 @@ class Cart extends Component {
             <div>
                 <Nav />
                 {shoppingCartDisplay[0] ?
-                shoppingCartDisplay
+                <div>
+                    {shoppingCartDisplay}
+                    <StripeCheckout 
+                    token={this.token}
+                    stripeKey={stripe.pub_key}
+                    amount={100}//link this to total once you have set it up
+                    />
+                </div>
                 : <div>
                     <h1>Your cart is empty!</h1>
                 </div>} 
