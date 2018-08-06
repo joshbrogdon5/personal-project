@@ -6,6 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 import {HashRouter} from 'react-router-dom';
 import {Provider} from 'react-redux';
 import store from './store'
+import Bootstrap from 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(
     <Provider store={store}>

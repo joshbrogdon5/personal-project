@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import {Button} from 'react-bootstrap';
+import './Login.css';
+
 
 
 
@@ -14,8 +17,13 @@ class Login extends Component {
 
     render(){
         return(
-            <div>
-                <button onClick={this.login}>Login</button>
+            <div className="main-container">
+                <div className='img'>
+                    <div className='title'><h1 id="main-title">Swoley Brothers</h1></div>
+                </div>
+                <div className="button-container">
+                    <Button bsStyle="primary" bsSize="small" onClick={this.login}>Login</Button>
+                </div>
             </div>
         )
     }
