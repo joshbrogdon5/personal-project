@@ -3,6 +3,8 @@ import {Link} from 'react-router-dom';
 import axios from 'axios';
 import {connect} from 'react-redux';
 import {storeProducts, activeCart, storeCartData} from './../../ducks/reducer';
+import './Dashboard.css';
+
 
 
 
@@ -20,9 +22,24 @@ class Dashboard extends Component {
 
     render(){
         return(
-            <div>
-                Dashboard
-                <Link to='/storefront'><button>Store</button></Link>
+            <div className='main-container-dashboard'>
+                <div className='buttons-container'>
+                    <div className='storebutton-maincontainer'>
+                        <div className='storebutton-container'>
+                            <Link to='/storefront'><button className='dashboard-buttons'>Store</button></Link>
+                        </div>
+                    </div>
+                    <div className='exercisebutton-maincontainer'>
+                        <div className='exercisebutton-container'>
+                            <Link to='/storefront'><button className='dashboard-buttons'>Exercise</button></Link>
+                        </div>
+                    </div>
+                    <div className='communitybutton-maincontainer'>
+                        <div className='communitybutton-container'>
+                            <Link to='/storefront'><button className='dashboard-buttons'>Community</button></Link>
+                        </div>
+                    </div>
+                </div>
             </div>
         )
     }

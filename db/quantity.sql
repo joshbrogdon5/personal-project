@@ -1,0 +1,1 @@
+update orders set quantity = $1 where product_id = $2 and cart_id = $3;

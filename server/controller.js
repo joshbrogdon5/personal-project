@@ -95,5 +95,15 @@ module.exports = {
             if(err) return res.sendStatus(500)
             return res.sendStatus(200)
         })
+    },
+    quantity: (req,res,next) => {
+        const dbInstance = req.app.get('db');
+
+        dbInstance.quantity([req.body.quantity, req.body.productid, req.session.user.cart_id])
+            .then(() => res.sendStatus(200))
+            .catch(err => {
+                res.status(500).send({errorMessage: "Something went wrong!"})
+                console.log(err);
+            })
     }
 }

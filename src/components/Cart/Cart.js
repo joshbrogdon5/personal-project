@@ -35,6 +35,7 @@ class Cart extends Component {
                 <div>
                     <h2>{e.title}</h2>
                     <h2>{`$${e.price}.00`}</h2>
+                    <h3>{e.quantity}</h3>
                     <div>
                         <button onClick={() => this.deleteFromCart(e.id)}>Remove Item</button>
                     </div>
