@@ -35,7 +35,8 @@ module.exports = {
         const dbInstance = req.app.get('db');
 
         dbInstance.join_all([req.session.user.cart_id])
-            .then(all => res.status(200).send(all))
+            .then(all => {console.log(all) 
+                 res.status(200).send(all)})
             .catch(err => {
                 res.status(500).send({errorMessage: "Something went wrong!"})
                 console.log(err)
@@ -98,7 +99,7 @@ module.exports = {
     },
     quantity: (req,res,next) => {
         const dbInstance = req.app.get('db');
-
+        console.log(req.body.quantity)
         dbInstance.quantity([req.body.quantity, req.body.productid, req.session.user.cart_id])
             .then(() => res.sendStatus(200))
             .catch(err => {

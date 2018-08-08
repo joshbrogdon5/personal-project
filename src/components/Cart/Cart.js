@@ -17,6 +17,7 @@ class Cart extends Component {
 
     componentDidMount(){
         axios.get('/api/display-all').then(results => {
+            console.log(results.data)
             this.props.storeCartData(results.data)
         })
     }
@@ -29,6 +30,7 @@ class Cart extends Component {
 
     render(){
     let shoppingCartDisplay = this.props.shoppingCart.map((e,i) => {
+        console.log('e', e)
         return(
             <div key={i}>
                 <img src={e.image} alt="" />

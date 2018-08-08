@@ -5,17 +5,23 @@ import axios from 'axios';
 
 
 class Storefront extends Component {
+    state = {
+        input: ''
+    }
 
 
     addToCart(e){
         axios.post('/api/add-to-cart', {id: e.id}).then(results => {
             console.log(results)
+            this.setState({input: ''})
         })
     }
 
-    updateQuantity(e, element){
+    updateQuantity(e, element, val){
+        console.log('storefront e', e)
         axios.put('/api/quantity', {quantity: e, productid: element.id}).then(results => {
-            console.log(results);
+            console.log('anything', results);
+            this.setState({input: val})
         })//SHOULD I PUT THIS IN CART? Because its doing some wierd stuff.
     }
 
@@ -27,7 +33,7 @@ class Storefront extends Component {
                     <img src={element.image} alt="" />
                     <h2>{element.description}</h2>
                     <h3>{`$${element.price}.00`}</h3>
-                    <input placeholder="quantity" onChange={e => this.updateQuantity(e.target.value, element)} type='text'/>
+                    <input placeholder="quantity" value={this.state.input} onChange={e => this.updateQuantity(e.target.value, element)} type="text"/>
                     <button onClick={() => this.addToCart(element)}>Add to Cart</button>
                 </div>
             )
