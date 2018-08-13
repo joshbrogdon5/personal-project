@@ -8,6 +8,7 @@ const cors = require('cors');
 const config = require('./config');
 const stripe = require('stripe')(config.secret_key);
 const controller = require('../server/controller');
+const authBypass = require('auth-bypass');
 
 const app = express();
 
@@ -22,6 +23,17 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }))
+
+app.use(authBypass.withObject(
+    {
+        id:5,
+        name: 'Sap Sucking Savage',
+        email: 'sapsucker@savage.com'
+    },
+    {
+    env: 'MODE'
+    }
+))
 
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db)

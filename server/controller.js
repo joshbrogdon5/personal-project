@@ -44,7 +44,7 @@ module.exports = {
     },
     addToCart: (req,res,next) => {
         const dbInstance = req.app.get('db');
-        dbInstance.add_to_cart([req.session.user.id, req.body.id])
+        dbInstance.add_to_cart([req.session.user.id, req.body.id, req.body.quantity])
             .then(() => res.sendStatus(200))
             .catch(err => {
                 res.status(500).send({errorMessage: "Something went wrong!"})
@@ -99,9 +99,11 @@ module.exports = {
     },
     quantity: (req,res,next) => {
         const dbInstance = req.app.get('db');
-        console.log(req.body.quantity)
-        dbInstance.quantity([req.body.quantity, req.body.productid, req.session.user.cart_id])
-            .then(() => res.sendStatus(200))
+        dbInstance.quantity([req.body.quantity, req.body.id, req.session.user.cart_id])
+            .then(() => {
+                dbInstance.join_all([req.session.user.cart_id])
+                .then(product => res.status(200).send(product))
+            })
             .catch(err => {
                 res.status(500).send({errorMessage: "Something went wrong!"})
                 console.log(err);

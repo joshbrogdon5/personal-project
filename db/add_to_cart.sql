@@ -1,1 +1,1 @@
-insert into orders(cart_id, product_id) values($1,$2);
+insert into orders(cart_id, product_id, quantity) values($1,$2, $3);

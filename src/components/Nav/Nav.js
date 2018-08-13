@@ -23,7 +23,7 @@ class Nav extends Component {
                         <Link className='nav-link'to='/storefront'><button type='button' className='btn btn-outline-light'>Community</button></Link>
                         <Link className='nav-link' to='/cart'><button type='button' className='btn btn-outline-light'>Cart</button></Link>
                         <Link className='nav-link' to='/accountpage'><button type='button' className='btn btn-outline-light'>Account</button></Link>
-                        <button type='button' className='btn btn-link text-danger' onClick={() => this.logout()}>Logout</button>
+                        <button type='button' className='btn btn-link text-light' onClick={() => this.logout()}>Logout</button>
                     </div>
                 </nav>
         )
