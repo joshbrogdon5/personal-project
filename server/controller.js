@@ -35,7 +35,7 @@ module.exports = {
         const dbInstance = req.app.get('db');
 
         dbInstance.join_all([req.session.user.cart_id])
-            .then(all => {console.log(all) 
+            .then(all => {
                  res.status(200).send(all)})
             .catch(err => {
                 res.status(500).send({errorMessage: "Something went wrong!"})

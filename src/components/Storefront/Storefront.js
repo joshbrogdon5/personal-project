@@ -34,14 +34,14 @@ class Storefront extends Component {
                     <img src={element.image} alt="" />
                     <h3>{element.description}</h3>
                     <h3>{`$${element.price}.00`}</h3>
-                    <input placeholder="quantity" value={this.state.quantity} onChange={e => this.updateQuantity(e.target.value, element)} type="text"/>
+                    <input placeholder="quantity" onChange={e => this.updateQuantity(e.target.value, element)} type="text"/>
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm" onClick={() => this.addToCart(element)}>Add to Cart</button>
                     <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-sm">
-                        <div class="modal-content">
-                        Item successfully added to your cart!
+                        <div class="modal-dialog modal-sm">
+                            <div class="modal-content">
+                                Item successfully added!
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
             )
