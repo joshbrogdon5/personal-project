@@ -71,6 +71,7 @@ app.get('/api/display-all', controller.displayAll);
 app.post('/api/add-to-cart', controller.addToCart);
 app.delete('/api/product/:id', controller.deleteProduct);
 app.put('/api/quantity', controller.quantity);
+app.put('/api/clear-cart', controller.clearCart)
 
 //STRIPE:
 app.post('/api/payment', controller.makePayment);

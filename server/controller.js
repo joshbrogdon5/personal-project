@@ -1,3 +1,6 @@
+const config = require('./config');
+const stripe = require('stripe')(config.secret_key);
+
 module.exports = {
     logout: (req,res) => {
         req.session.destroy();
@@ -22,7 +25,9 @@ module.exports = {
                             res.status(200).send({cart, products})
                         }else{
                             dbInstance.create_cart(req.session.user.id)
-                                .then(cart => { res.status(200).send({cart, products})})
+                                .then(cart => { 
+                                    req.session.user.cart_id = cart[0].id
+                                    res.status(200).send({cart, products})})
                         }
                     })
             })
@@ -44,7 +49,7 @@ module.exports = {
     },
     addToCart: (req,res,next) => {
         const dbInstance = req.app.get('db');
-        dbInstance.add_to_cart([req.session.user.id, req.body.id, req.body.quantity])
+        dbInstance.add_to_cart([req.session.user.cart_id, req.body.id, req.body.quantity])
             .then(() => res.sendStatus(200))
             .catch(err => {
                 res.status(500).send({errorMessage: "Something went wrong!"})
@@ -103,6 +108,21 @@ module.exports = {
             .then(() => {
                 dbInstance.join_all([req.session.user.cart_id])
                 .then(product => res.status(200).send(product))
+            })
+            .catch(err => {
+                res.status(500).send({errorMessage: "Something went wrong!"})
+                console.log(err);
+            })
+    },
+    clearCart: (req,res,next) => {
+        const dbInstance = req.app.get('db');
+        console.log(req.session.user.id, req.session.user.cart_id)
+        dbInstance.clear_cart([req.session.user.id, req.session.user.cart_id])
+            .then(() => {
+                dbInstance.create_cart(req.session.user.id)
+                    .then(cart => {
+                        req.session.user.cart_id = cart[0].id;
+                        res.status(200).send({cart})})
             })
             .catch(err => {
                 res.status(500).send({errorMessage: "Something went wrong!"})

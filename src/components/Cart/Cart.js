@@ -21,7 +21,8 @@ class Cart extends Component {
     onToken = (token) => {
         token.card = void 0;
         console.log('token', token);
-        axios.post('http://localhost:3333/api/payment', { token, amount: 100 }).then(response => {alert('Gucci Gang')});
+        axios.post('/api/payment', { token, amount: 100 })
+        .then(axios.put('/api/clear-cart'));
     }//in the .then make an axios call to update total in database.
 
     componentDidMount(){
@@ -89,7 +90,7 @@ class Cart extends Component {
                     {shoppingCartDisplay}
                     <h3>Total: ${this.state.total}</h3>
                     <StripeCheckout 
-                    token={this.token}
+                    token={this.onToken}
                     stripeKey={stripe.pub_key}
                     amount={this.state.total*100}//link this to total once you have set it up
                     />
