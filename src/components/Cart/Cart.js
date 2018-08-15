@@ -5,7 +5,7 @@ import {connect} from 'react-redux';
 import axios from 'axios';
 import stripe from './../../stripeKey';
 import StripeCheckout from 'react-stripe-checkout';
-
+import {withRouter} from 'react-router';
 
 
 class Cart extends Component {
@@ -23,6 +23,7 @@ class Cart extends Component {
         console.log('token', token);
         axios.post('/api/payment', { token, amount: 100 })
         .then(axios.put('/api/clear-cart'));
+        this.props.history.push('/thankyou')
     }//in the .then make an axios call to update total in database.
 
     componentDidMount(){
@@ -109,4 +110,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, {removeFromCart, storeCartData})(Cart);
+export default connect(mapStateToProps, {removeFromCart, storeCartData})(withRouter(Cart));

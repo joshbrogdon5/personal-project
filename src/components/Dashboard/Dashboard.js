@@ -21,22 +21,25 @@ class Dashboard extends Component {
     }
 
     render(){
+        const buttonFinger = {
+            cursor: 'pointer'
+        }
         return(
             <div className='main-container-dashboard'>
                 <div className='buttons-container'>
                     <div className='storebutton-maincontainer'>
                         <div className='storebutton-container'>
-                            <Link to='/storefront'><button className='dashboard-buttons'>Store</button></Link>
+                            <Link to='/storefront'><button style={buttonFinger} className='dashboard-buttons'>Store</button></Link>
                         </div>
                     </div>
                     <div className='exercisebutton-maincontainer'>
                         <div className='exercisebutton-container'>
-                            <Link to='/storefront'><button className='dashboard-buttons'>Exercise</button></Link>
+                            <Link to='/storefront'><button style={buttonFinger} className='dashboard-buttons'>Exercise</button></Link>
                         </div>
                     </div>
                     <div className='communitybutton-maincontainer'>
                         <div className='communitybutton-container'>
-                            <Link to='/storefront'><button className='dashboard-buttons'>Community</button></Link>
+                            <Link to='/storefront'><button style={buttonFinger} className='dashboard-buttons'>Community</button></Link>
                         </div>
                     </div>
                 </div>
