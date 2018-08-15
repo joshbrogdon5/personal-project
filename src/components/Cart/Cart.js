@@ -6,6 +6,7 @@ import axios from 'axios';
 import stripe from './../../stripeKey';
 import StripeCheckout from 'react-stripe-checkout';
 import {withRouter} from 'react-router';
+import './Cart.css'
 
 
 class Cart extends Component {
@@ -65,17 +66,23 @@ class Cart extends Component {
     }
 
     render(){
-        console.log(this.state.total)
+        const imgStyle = {
+            width: '70px',
+            height: '100px'
+        }
+        const inputStyle = {
+            width: '100px'
+        }
         let shoppingCartDisplay = this.props.shoppingCart.map((e,i) => {
         return(
-            <div key={i}>
-                <img src={e.image} alt="" />
+            <div className='mapDivCart' key={i}>
                 <div>
-                    <h2>{e.title}</h2>
-                    <h2>{`$${e.price}.00`}</h2>
-                    <h3>Quantity: {e.quantity}</h3>
-                    <input placeholder='edit quantity' onChange={e => this.handleQuantity(e.target.value)} type="text"/>
-                    <button onClick={() => this.updateQuantity(e.id)}>Submit Changes</button>
+                    <h3>{e.title}</h3>
+                    <img style={imgStyle} src={e.image} alt="" />
+                    <h4>{`$${e.price}.00`}</h4>
+                    <h4>Quantity: {e.quantity}</h4>
+                    <input style={inputStyle} placeholder='edit quantity' onChange={e => this.handleQuantity(e.target.value)} type="text"/>
+                    <button onClick={() => this.updateQuantity(e.id)}>Submit</button>
                     <div>
                         <button onClick={() => this.deleteFromCart(e.id)}>Remove Item</button>
                     </div>
@@ -86,19 +93,23 @@ class Cart extends Component {
         return(
             <div>
                 <Nav />
-                {shoppingCartDisplay[0] ?
-                <div>
-                    {shoppingCartDisplay}
-                    <h3>Total: ${this.state.total}</h3>
-                    <StripeCheckout 
-                    token={this.onToken}
-                    stripeKey={stripe.pub_key}
-                    amount={this.state.total*100}//link this to total once you have set it up
-                    />
+                <div className='displayDivContainer'>
+                    <div className='displayDiv' >
+                        {shoppingCartDisplay[0] ?
+                        <div>
+                            {shoppingCartDisplay}
+                            <h3>Total: ${this.state.total}</h3>
+                            <StripeCheckout 
+                            token={this.onToken}
+                            stripeKey={stripe.pub_key}
+                            amount={this.state.total*100}//link this to total once you have set it up
+                            />
+                        </div>
+                        : <div>
+                            <h1>Your cart is empty!</h1>
+                        </div>}
+                    </div>
                 </div>
-                : <div>
-                    <h1>Your cart is empty!</h1>
-                </div>} 
             </div>
         )
     }

@@ -1,0 +1,19 @@
+.displayDivContainer{
+    margin: 10px;
+    border: 2px solid grey;
+}
+.displayDiv{
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: flex-start;
+	align-content: center;
+}
+.mapDivCart{
+    width: 33%;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    border: 1px solid grey;
+}

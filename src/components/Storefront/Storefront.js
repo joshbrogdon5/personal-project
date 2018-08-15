@@ -27,15 +27,30 @@ class Storefront extends Component {
     }
 
     render(){
+        const imgStyle = {
+            width: '160px',
+            height: '250px'
+        }
+        const inputStyle = {
+            width: '80px'
+        }
         let productsDisplay = this.props.products.map((element,i) => {
             return(
-                <div key={i}>
-                    <h2>{element.title}</h2>
-                    <img src={element.image} alt="" />
-                    <h3>{element.description}</h3>
-                    <h3>{`$${element.price}.00`}</h3>
-                    <input placeholder="quantity" onChange={e => this.updateQuantity(e.target.value, element)} type="text"/>
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm" onClick={() => this.addToCart(element)}>Add to Cart</button>
+                <div className='mapDiv' key={i}>
+                    <h3>{element.title}</h3>
+                    <img style={imgStyle} src={element.image} alt="" />
+                    <p>{element.description}</p>
+                    <h4>{`$${element.price}.00`}</h4>
+                    <input style={inputStyle} placeholder="quantity" onChange={e => this.updateQuantity(e.target.value, element)} type="text"/>
+                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".bd-example-modal-sm" onClick={() => this.addToCart(element)}>Add to Cart</button>
+                </div>
+            )
+        })
+        return(
+            <div>
+                <Nav />
+                <div className='display'>
+                    {productsDisplay}
                     <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-sm">
                             <div class="modal-content">
@@ -44,12 +59,6 @@ class Storefront extends Component {
                         </div>
                     </div>
                 </div>
-            )
-        })
-        return(
-            <div>
-                <Nav />
-                {productsDisplay}
             </div>
         )
     }
