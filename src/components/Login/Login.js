@@ -19,7 +19,7 @@ class Login extends Component {
         return(
             <div className="main-container">
                 <div className='img'>
-                    <div className='title'><h1 id="main-title">Swoley Brothers</h1></div>
+                    <div className='title'><h1 id="main-title">Swoley Bros</h1></div>
                 </div>
                 <div className="button-container">
                     <Button bsStyle="primary" bsSize="small" onClick={this.login}>Login</Button>

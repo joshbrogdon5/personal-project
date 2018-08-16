@@ -1,0 +1,12 @@
+.main{
+    background-image: url(./../../images/coolbackground.jpg);
+    background-position: center;
+    background-position: 0px 0px;
+    background-repeat: repeat-x;
+
+    animation: mainAnimation 25s linear infinite;
+}
+@keyframes mainAnimation{
+    from{background-position: 0 0;}
+    to{background-position: 100% 0;}
+}

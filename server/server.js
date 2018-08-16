@@ -9,14 +9,17 @@ const config = require('./config');
 const stripe = require('stripe')(config.secret_key);
 const controller = require('../server/controller');
 const authBypass = require('auth-bypass');
+const path = require('path');
 
 const app = express();
+
+app.use( express.static( `${__dirname}/../build` ) );
 
 app.use(bodyParser.json());
 
 app.use(cors());
 
-const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING, REACT_APP_DOMAIN, REACT_APP_CLIENT_ID, CLIENT_SECRET} = process.env;
+const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING, REACT_APP_DOMAIN, REACT_APP_CLIENT_ID, CLIENT_SECRET, REACT_APP_LOCALHOST_DASH} = process.env;
 
 app.use(session({
     secret: SESSION_SECRET,
@@ -57,10 +60,10 @@ app.get('/auth/callback', async (req,res) => {
     let foundUser = await db.find_user([sub]);
     if(foundUser[0]){
         req.session.user = foundUser[0]
-        res.redirect('http://localhost:3000/#/dashboard')
+        res.redirect(REACT_APP_LOCALHOST_DASH)
     }else {
         let createdUser = await db.create_user([name, email, sub, picture])
-        res.redirect('http://localhost:3000/#/dashboard')
+        res.redirect(REACT_APP_LOCALHOST_DASH)
     }
 });
 
@@ -75,6 +78,11 @@ app.put('/api/clear-cart', controller.clearCart)
 
 //STRIPE:
 app.post('/api/payment', controller.makePayment);
+
+
+app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../build/index.html'));
+});
 
 
 app.listen(SERVER_PORT, () => {

@@ -34,7 +34,7 @@
       "target": "http://localhost:3333"
     },
     "/auth/callback": {
-      "target": "http://localhost:3005"
+      "target": "http://localhost:3333"
     }
   }
 }

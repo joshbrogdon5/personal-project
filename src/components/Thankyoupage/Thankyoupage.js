@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {Link} from 'react-router-dom';
 import checkmark from './../../images/checkmark.png';
+import './Thankyoupage.css';
 
 
 export default class Thankyou extends Component {

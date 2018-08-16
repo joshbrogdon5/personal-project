@@ -4,7 +4,7 @@ const stripe = require('stripe')(config.secret_key);
 module.exports = {
     logout: (req,res) => {
         req.session.destroy();
-        res.redirect('http://localhost:3000/')
+        res.redirect('/#/')
     },
     userData: (req,res) => {
         if(req.session.user){

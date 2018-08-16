@@ -94,9 +94,9 @@ class Cart extends Component {
             <div>
                 <Nav />
                 <div className='displayDivContainer'>
-                    <div className='displayDiv' >
+                    <div>
                         {shoppingCartDisplay[0] ?
-                        <div>
+                        <div className='displayDiv' >
                             {shoppingCartDisplay}
                             <h3>Total: ${this.state.total}</h3>
                             <StripeCheckout 
