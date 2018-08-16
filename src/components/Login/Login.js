@@ -12,17 +12,19 @@ class Login extends Component {
 
         let url = `${window.location.origin}/auth/callback`
 
-        window.location = `https://${REACT_APP_DOMAIN}/authorize?client_id=${REACT_APP_CLIENT_ID}&scope=openid%20profile%20email&redirect_uri${url}&response_type=code`
+        window.location = `https://${REACT_APP_DOMAIN}/authorize?client_id=${REACT_APP_CLIENT_ID}&scope=openid%20profile%20email&redirect_uri$={url}&response_type=code`
     }
 
     render(){
         return(
             <div className="main-container">
-                <div className='img'>
-                    <div className='title'><h1 id="main-title">Swoley Bros</h1></div>
-                </div>
-                <div className="button-container">
-                    <Button bsStyle="primary" bsSize="small" onClick={this.login}>Login</Button>
+                <div className='content-container'>
+                    <div className='title'>
+                        <h1 id="main-title">Swoley Bros</h1>
+                    </div>
+                    <div className="button-container">
+                        <button onClick={this.login}>Login</button>
+                    </div>
                 </div>
             </div>
         )

@@ -1,12 +1,15 @@
 .main{
-    background-image: url(./../../images/coolbackground.jpg);
+    background-image: url(./../../images/coolbackground2.jpg);
     background-position: center;
     background-position: 0px 0px;
     background-repeat: repeat-x;
+    overflow: hidden;
+    animation-direction: alternate;
 
-    animation: mainAnimation 25s linear infinite;
+    animation: mainAnimation 30s linear infinite;
 }
 @keyframes mainAnimation{
-    from{background-position: 0 0;}
-    to{background-position: 100% 0;}
+    0% {background-position: 100% 0;}
+    50% {background-position: 0 0;}
+    100% {background-position: 100% 0;}
 }
