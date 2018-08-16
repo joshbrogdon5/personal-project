@@ -19,6 +19,8 @@ export default class Thankyou extends Component {
           display: 'flex',
           flexDirection: 'column',
           alignContent: 'center',
+          alignItems: 'center',
+          textAlign: 'center',
           width: '50%',
           height: '60vh',
           margin: 'auto',
@@ -38,7 +40,7 @@ export default class Thankyou extends Component {
           width: '20%'
       }
       const buttonStyle = {
-          width: '100%',
+          width: '20%',
           border: 'none',
           borderRadius: '5px',
           backgroundColor: 'grey',

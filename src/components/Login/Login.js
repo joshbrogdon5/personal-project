@@ -16,14 +16,26 @@ class Login extends Component {
     }
 
     render(){
+
+        const contentContainerStyle = {
+            margin: 'auto',
+            display: 'flex',
+            flexDirection: 'column',
+            alignContent: 'center',
+            alignItems: 'center'
+        }
+        const titleStyle = {
+            fontSize: '5rem'
+        }
+
         return(
             <div className="main-container">
-                <div className='content-container'>
+                <div className='content-container' style={contentContainerStyle}>
                     <div className='title'>
-                        <h1 id="main-title">Swoley Bros</h1>
+                        <h1 id="main-title" style={titleStyle}>Swoley Bros</h1>
                     </div>
                     <div className="button-container">
-                        <button onClick={this.login}>Login</button>
+                        <button className='login-button' onClick={this.login}>Login</button>
                     </div>
                 </div>
             </div>
