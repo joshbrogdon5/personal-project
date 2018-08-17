@@ -72,9 +72,6 @@ class Cart extends Component {
             float: 'left',
             margin: '10px'
         }
-        const inputStyle = {
-            width: '100px'
-        }
         const textPosition = {
             float: 'right',
             marginLeft: '10px'
@@ -92,9 +89,17 @@ class Cart extends Component {
                     <div style={textPosition}>
                         <h3>{e.title}</h3>
                         <h4>{`$${e.price}.00`}</h4>
-                        <h4>Quantity: {e.quantity}</h4>
-                        <input style={inputStyle} placeholder='edit quantity' onChange={e => this.handleQuantity(e.target.value)} type="text"/>
-                        <button className='cart-buttons' onClick={() => this.updateQuantity(e.id)}>Submit</button>
+                        <form class="form-inline">
+                            <select class="custom-select my-sm-1 mr-sm-2" id="inlineFormCustomSelectPref" onChange={e => this.handleQuantity(e.target.value)}>
+                                <option value="0" selected>0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                        <button onClick={() => this.updateQuantity(e.id)}>save</button>  
+                        </form>  
                         <div>
                             <button style={buttonPosition} type='button' class='close' aria-label='Close' onClick={() => this.deleteFromCart(e.id)}>
                                 <span aria-hidden='true'>&times;</span>
