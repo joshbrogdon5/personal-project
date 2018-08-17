@@ -25,7 +25,9 @@ class Login extends Component {
             alignItems: 'center'
         }
         const titleStyle = {
-            fontSize: '5rem'
+            fontSize: '5rem',
+            letterSpacing: '1px',
+            fontFamily: 'Verdana'
         }
 
         return(

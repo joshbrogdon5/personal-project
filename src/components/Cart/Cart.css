@@ -7,13 +7,37 @@
 	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: center;
-	align-items: flex-start;
+	align-items: stretch;
 	align-content: center;
 }
 .mapDivCart{
-    width: 33%;
-    align-content: center;
-    align-items: center;
-    text-align: center;
+    position: relative;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: center;
     border: 1px solid grey;
+}
+.checkout{
+    text-align: center;
+    border: 1px solid blue;
+}
+.cart-buttons{
+    border: none;
+    border-radius: 3px;
+    background-color: #343434;
+    color: #dfdfdf;
+    font-family: helvetica;
+    transition: color 0.3s, background-color 0.3s;
+    text-shadow: #343434;
+}
+.cart-buttons:hover{
+    background-color: #dfdfdf;
+    color: #343434;
+    cursor: pointer;
+    transition: color 0.3s, background-color 0.3s;
+    text-shadow: #dfdfdf;
+
 }

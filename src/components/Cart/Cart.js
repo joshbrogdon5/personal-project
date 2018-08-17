@@ -67,24 +67,39 @@ class Cart extends Component {
 
     render(){
         const imgStyle = {
-            width: '70px',
-            height: '100px'
+            width: '120px',
+            height: '170px',
+            float: 'left',
+            margin: '10px'
         }
         const inputStyle = {
             width: '100px'
+        }
+        const textPosition = {
+            float: 'right',
+            marginLeft: '10px'
+        }
+        const buttonPosition = {
+            position: 'absolute',
+            top: '0px',
+            right: '0px'
         }
         let shoppingCartDisplay = this.props.shoppingCart.map((e,i) => {
         return(
             <div className='mapDivCart' key={i}>
                 <div>
-                    <h3>{e.title}</h3>
                     <img style={imgStyle} src={e.image} alt="" />
-                    <h4>{`$${e.price}.00`}</h4>
-                    <h4>Quantity: {e.quantity}</h4>
-                    <input style={inputStyle} placeholder='edit quantity' onChange={e => this.handleQuantity(e.target.value)} type="text"/>
-                    <button onClick={() => this.updateQuantity(e.id)}>Submit</button>
-                    <div>
-                        <button onClick={() => this.deleteFromCart(e.id)}>Remove Item</button>
+                    <div style={textPosition}>
+                        <h3>{e.title}</h3>
+                        <h4>{`$${e.price}.00`}</h4>
+                        <h4>Quantity: {e.quantity}</h4>
+                        <input style={inputStyle} placeholder='edit quantity' onChange={e => this.handleQuantity(e.target.value)} type="text"/>
+                        <button className='cart-buttons' onClick={() => this.updateQuantity(e.id)}>Submit</button>
+                        <div>
+                            <button style={buttonPosition} type='button' class='close' aria-label='Close' onClick={() => this.deleteFromCart(e.id)}>
+                                <span aria-hidden='true'>&times;</span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -98,12 +113,14 @@ class Cart extends Component {
                         {shoppingCartDisplay[0] ?
                         <div className='displayDiv' >
                             {shoppingCartDisplay}
-                            <h3>Total: ${this.state.total}</h3>
-                            <StripeCheckout 
-                            token={this.onToken}
-                            stripeKey={stripe.pub_key}
-                            amount={this.state.total*100}//link this to total once you have set it up
-                            />
+                            <div className='checkout'>
+                                <h3>Total: ${this.state.total}</h3>
+                                <StripeCheckout 
+                                token={this.onToken}
+                                stripeKey={stripe.pub_key}
+                                amount={this.state.total*100}//link this to total once you have set it up
+                                />
+                            </div>
                         </div>
                         : <div>
                             <h1>Your cart is empty!</h1>

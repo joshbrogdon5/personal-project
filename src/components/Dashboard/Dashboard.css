@@ -97,3 +97,31 @@
 .dashboard-buttons:hover{
     color: #343434;
 }
+
+@media screen and (max-width: 600px){
+    .buttons-container{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+    }
+    .storebutton-maincontainer{
+        width: 100%;
+        background-image: url('./../../images/supplementsbackground.jpg');
+        background-position: center;
+    }
+    .communitybutton-maincontainer{
+        width: 100%;
+    }
+    .exercisebutton-maincontainer{
+        width: 100%;
+    }
+    .dashboard-buttons{
+        color: white;
+        background-color: #343434;
+        opacity: 0.8;
+    }
+}

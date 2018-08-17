@@ -1,0 +1,17 @@
+.accountpage-main{
+    /* background-image: url('./../../images/backgroundgif.gif');
+    background-position: center;
+    background-size: cover; */
+}
+.account-content-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    background: whitesmoke;
+    text-align: center;
+    height: 70vh;
+    width: 30%;
+    box-shadow: 4px 6px;
+}

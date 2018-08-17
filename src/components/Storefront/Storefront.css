@@ -16,3 +16,21 @@
 .mapDiv:hover{
     opacity: 1;
 }
+
+@media screen and (max-width: 600px){
+    .display{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+    }
+    .mapDiv{
+        width: 100%;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+        margin: 10px
+    }
+}
