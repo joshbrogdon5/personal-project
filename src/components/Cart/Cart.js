@@ -74,7 +74,9 @@ class Cart extends Component {
         }
         const textPosition = {
             float: 'right',
-            marginLeft: '10px'
+            width: '40%',
+            marginLeft: '10px',
+            overflowWrap: 'normal'
         }
         const buttonPosition = {
             position: 'absolute',
@@ -84,7 +86,6 @@ class Cart extends Component {
         let shoppingCartDisplay = this.props.shoppingCart.map((e,i) => {
         return(
             <div className='mapDivCart' key={i}>
-                <div>
                     <img style={imgStyle} src={e.image} alt="" />
                     <div style={textPosition}>
                         <h3>{e.title}</h3>
@@ -105,7 +106,6 @@ class Cart extends Component {
                                 <span aria-hidden='true'>&times;</span>
                             </button>
                         </div>
-                    </div>
                 </div>
             </div>
         )
