@@ -40,7 +40,7 @@ export default class Thankyou extends Component {
           width: '20%'
       }
       const buttonStyle = {
-          width: '20%',
+          width: '30%',
           border: 'none',
           borderRadius: '5px',
           backgroundColor: 'grey',
@@ -57,13 +57,13 @@ export default class Thankyou extends Component {
       }
     return (
       <div className="main" style={mainStyle}>
-        <div className='content-conatiner' style={contentContainerStyle}>
+        <div className='thankyou-content-container' style={contentContainerStyle}>
             <div className='img-container' style={imgContainerStyle}>
-                <img style={imgStyle} src={checkmark} alt='checkmark'/>
+                <img className='checkmark' style={imgStyle} src={checkmark} alt='checkmark'/>
             </div>
             <div className='thankyou-container' style={thankyouContainerStyle}>
-                <h1>Thank You!</h1>
-                <h3>We hope you enjoy your purchase</h3>
+                <h1 className='thankyou-text'>Thank You!</h1>
+                <h3 className='enjoypurchase'>We hope you enjoy your purchase</h3>
             </div>
             <div className='button-container' style={buttonContainerStyle}>
                 <Link to='/dashboard' style={linkStyle}><button className='ok-button'style={buttonStyle}>Ok</button></Link>
