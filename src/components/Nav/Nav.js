@@ -12,7 +12,7 @@ class Nav extends Component {
         super()
         
         this.state={
-            showButtons: false
+            showButtons: true
         }
     }
 
@@ -33,7 +33,7 @@ class Nav extends Component {
         return(
                 <nav className='nav' id='myNav'>
                     <div className='nav-title-container'>
-                        <img style={imgStyle} src={dumbell} alt='dumbell'/>
+                        <Link to='/dashboard'><img style={imgStyle} src={dumbell} alt='dumbell'/></Link>
                         <h2 className='nav-title'>Swoley Bros</h2>
                     </div>
                     <div className='nav-buttons-container' id={this.state.showButtons ? 'expand' : null}>

@@ -33,19 +33,22 @@ componentDidMount(){
         boxShadow: '3px 5px',
         marginBottom: '10px'
     }
+    const textStyle = {
+        color: '#dfdfdf'
+    }
 
     return (
       <div>
         <Nav />
         <div style={mainStyle} className='accountpage-main'>
             <div className='account-content-container'>
-                <h2>Account Information</h2>
+                <h2 style={textStyle}>Account Information</h2>
                 {
                     user.user_name? (
                         <div>
                             <img style={imgStyle} src={user.picture} alt="" />
-                            <h6>Account Holder: {user.user_name}</h6>
-                            <h6>Account Email: {user.email}</h6>
+                            <h6 style={textStyle}>Account Holder: {user.user_name}</h6>
+                            <h6 style={textStyle}>Account Email: {user.email}</h6>
                         </div>
                     ) : <p>Please Login <Link to='/'>Here</Link></p>
                 }

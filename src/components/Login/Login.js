@@ -22,7 +22,7 @@ class Login extends Component {
             display: 'flex',
             flexDirection: 'column',
             alignContent: 'center',
-            alignItems: 'center'
+            alignItems: 'center',
         }
         const titleStyle = {
             fontSize: '5rem',
