@@ -83,6 +83,13 @@ class Cart extends Component {
             top: '0px',
             right: '0px'
         }
+        // const formStyle = {
+        //     display: 'flex',
+        //     flexDirection: 'row',
+        //     justifyContent: 'center',
+        //     flexWrap: 'nowrap',
+        //     margin: '4px'
+        // }
         let shoppingCartDisplay = this.props.shoppingCart.map((e,i) => {
         return(
             <div className='mapDivCart' key={i}>
@@ -92,7 +99,8 @@ class Cart extends Component {
                         <h4>{`$${e.price}.00`}</h4>
                         <form class="form-inline">
                             <select class="custom-select my-sm-1 mr-sm-2" id="inlineFormCustomSelectPref" onChange={e => this.handleQuantity(e.target.value)}>
-                                <option value="0" selected>0</option>
+                                <option value="0" selected>{e.quantity}</option>
+                                <option value="0">0</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>

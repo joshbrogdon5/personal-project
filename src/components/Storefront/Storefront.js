@@ -31,9 +31,9 @@ class Storefront extends Component {
             width: '160px',
             height: '250px'
         }
-        const inputStyle = {
-            width: '80px'
-        }
+        // const inputStyle = {
+        //     width: '80px'
+        // }
         let productsDisplay = this.props.products.map((element,i) => {
             return(
                 <div className='mapDiv' key={i}>
@@ -41,8 +41,17 @@ class Storefront extends Component {
                     <img style={imgStyle} src={element.image} alt="" />
                     <p>{element.description}</p>
                     <h4>{`$${element.price}.00`}</h4>
-                    <input style={inputStyle} placeholder="quantity" onChange={e => this.updateQuantity(e.target.value, element)} type="text"/>
-                    <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".bd-example-modal-sm" onClick={() => this.addToCart(element)}>Add to Cart</button>
+                    <form class="form-inline1">
+                            <select class="custom-select my-sm-1 mr-sm-2" id="inlineFormCustomSelectPref1" onChange={e => this.updateQuantity(e.target.value, element)}>
+                                <option value="0" selected>0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="3">3</option>
+                                <option value="4">4</option>
+                                <option value="5">5</option>
+                            </select>
+                            <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target=".bd-example-modal-sm" onClick={() => this.addToCart(element)}>Add to Cart</button>
+                        </form>
                 </div>
             )
         })
