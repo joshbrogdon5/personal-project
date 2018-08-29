@@ -29,7 +29,6 @@ class Cart extends Component {
 
     componentDidMount(){
         axios.get('/api/display-all').then(results => {
-            console.log(results.data)
             this.props.storeCartData(results.data)
             this.calculateTotal()
         }

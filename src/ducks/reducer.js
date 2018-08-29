@@ -11,6 +11,7 @@ const ADD_TO_CART = 'ADD_TO_CART';
 const REMOVE_FROM_CART = 'REMOVE_FROM_CART';
 const ACTIVE_CART = 'ACTIVE_CART';
 const STORE_CART_DATA = 'STORE_CART_DATA';
+const IMPORT_POSTS = 'IMPORT_POSTS';
 
 export const updateUserData = (user) => ({
   type: UPDATE_USER_DATA,
@@ -42,6 +43,12 @@ export const storeCartData = (cartData) => ({
   payload: cartData
 })
 
+export const importPosts = (posts) => ({
+  type: IMPORT_POSTS,
+  payload: posts
+})
+
+
 
 export default function reducer(state = initialState, action){
   switch (action.type) {
@@ -58,8 +65,10 @@ export default function reducer(state = initialState, action){
     case ACTIVE_CART:
         return Object.assign({}, state, {shoppingCart: action.payload})
     case STORE_CART_DATA:
-    console.log(action.payload)
         return Object.assign({}, state, {shoppingCart: action.payload})
+    case IMPORT_POSTS:
+        return Object.assign({}, state, {posts: action.payload})
+
 
     default: return state
   }

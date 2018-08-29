@@ -132,7 +132,20 @@ module.exports = {
         const dbInstance = req.app.get('db');
 
         dbInstance.create_post([req.session.user.id, req.body.title, req.body.content])
-            .then(() => res.sendStatus(20))
+            .then(() => {
+                dbInstance.get_posts()
+                    .then(posts => res.status(200).send(posts))
+            })
+            .catch(err => {
+                res.status(500).send({errorMessage: "Something went wrong!"})
+                console.log(err);
+            })
+    },
+    getPosts: (req, res) => {
+        const dbInstance = req.app.get('db');
+
+        dbInstance.get_posts()
+            .then(posts => res.status(200).send(posts))
             .catch(err => {
                 res.status(500).send({errorMessage: "Something went wrong!"})
                 console.log(err);

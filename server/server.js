@@ -78,6 +78,7 @@ app.put('/api/quantity', controller.quantity);
 app.put('/api/clear-cart', controller.clearCart)
 
 //community endpoints:
+app.get('/api/getposts', controller.getPosts)
 app.post('/api/createpost', controller.createPost)
 
 //STRIPE:
