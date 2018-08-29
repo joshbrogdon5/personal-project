@@ -131,7 +131,7 @@ class Cart extends Component {
                                 <StripeCheckout 
                                 token={this.onToken}
                                 stripeKey={stripe.pub_key}
-                                amount={this.state.total*100}//link this to total once you have set it up
+                                amount={this.state.total*100}
                                 />
                             </div>
                         </div>

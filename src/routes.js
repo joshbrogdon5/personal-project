@@ -6,6 +6,7 @@ import Storefront from './components/Storefront/Storefront';
 import Cart from './components/Cart/Cart';
 import Accountpage from './components/Accountpage/Accountpage';
 import Thankyou from './components/Thankyoupage/Thankyoupage';
+import Communitypage from './components/Communitypage/Communitypage';
 
 export default (
     <Switch>
@@ -15,5 +16,6 @@ export default (
         <Route path='/cart' component={Cart} />
         <Route path='/accountpage' component={Accountpage} />
         <Route path='/thankyou' component={Thankyou} />
+        <Route path='/community' component={Communitypage} />
     </Switch>
 )

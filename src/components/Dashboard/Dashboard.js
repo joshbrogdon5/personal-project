@@ -39,7 +39,7 @@ class Dashboard extends Component {
                     </div>
                     <div className='communitybutton-maincontainer'>
                         <div className='communitybutton-container'>
-                            <Link to='/storefront'><button style={buttonFinger} className='dashboard-buttons'>Community</button></Link>
+                            <Link to='/community'><button style={buttonFinger} className='dashboard-buttons'>Community</button></Link>
                         </div>
                     </div>
                 </div>

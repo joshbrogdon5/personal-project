@@ -67,6 +67,7 @@ app.get('/auth/callback', async (req,res) => {
     }
 });
 
+//store and cart endpoints:
 app.get('/api/logout', controller.logout);
 app.get('/api/user-data', controller.userData);
 app.get('/api/products', controller.getAllProducts);
@@ -75,6 +76,9 @@ app.post('/api/add-to-cart', controller.addToCart);
 app.delete('/api/product/:id', controller.deleteProduct);
 app.put('/api/quantity', controller.quantity);
 app.put('/api/clear-cart', controller.clearCart)
+
+//community endpoints:
+app.post('/api/createpost', controller.createPost)
 
 //STRIPE:
 app.post('/api/payment', controller.makePayment);

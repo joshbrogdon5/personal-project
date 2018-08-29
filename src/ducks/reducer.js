@@ -1,7 +1,8 @@
 const initialState = {
     user: {},
     products: [],
-    shoppingCart: []
+    shoppingCart: [],
+    posts: []
 }
 
 const UPDATE_USER_DATA = 'UPDATE_USER_DATA';

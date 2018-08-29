@@ -128,3 +128,35 @@
         opacity: 0.8;
     }
 }
+
+@media screen and (max-width: 1024px){
+    .buttons-container{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        width: 100%;
+        margin: 8px;
+    }
+    .storebutton-maincontainer{
+        width: 100%;
+        background-image: url('./../../images/supplementsbackground.jpg');
+        background-position: center;
+        margin-bottom: 5px;
+    }
+    .communitybutton-maincontainer{
+        width: 100%;
+        background-position: initial;
+    }
+    .exercisebutton-maincontainer{
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    .dashboard-buttons{
+        color: white;
+        background-color: #343434;
+        opacity: 0.8;
+    }
+}
