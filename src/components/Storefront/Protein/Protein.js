@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Nav from '../../Nav/Nav';
 import {connect} from 'react-redux';
-import {storeProteins} from '../../../ducks/reducer'
 import axios from 'axios';
 import './Protein.css';
 
@@ -77,4 +76,4 @@ function mapStateToProps(state){
     }
 }
 
-export default connect(mapStateToProps, {storeProteins})(Protein);
+export default connect(mapStateToProps)(Protein);

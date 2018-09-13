@@ -173,5 +173,28 @@ module.exports = {
                 res.status(500).send({errorMessage: "Something went wrong!"})
                 console.log(err);
             })
+    },
+    getAllPreworkouts: (req,res,next) => {
+        const dbInstance = req.app.get('db');
+
+        dbInstance.get_preworkout()
+            .then(preworkout => {
+                dbInstance.get_cartid(req.session.user.id)
+                    .then(cart => {
+                        if(cart[0]){
+                            req.session.user.cart_id = cart[0].id
+                            res.status(200).send({cart, preworkout})
+                        }else{
+                            dbInstance.create_cart(req.session.user.id)
+                                .then(cart => { 
+                                    req.session.user.cart_id = cart[0].id
+                                    res.status(200).send({cart, preworkout})})
+                        }
+                    })
+            })
+            .catch(err => {
+                res.status(500).send({errorMessage: "Something went wrong!"})
+                console.log(err);
+            })
     }
 }
