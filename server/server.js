@@ -78,6 +78,8 @@ app.put('/api/quantity', controller.quantity);
 app.put('/api/clear-cart', controller.clearCart)
 app.get('/api/proteins', controller.getAllProtein)
 app.get('/api/preworkouts', controller.getAllPreworkouts)
+app.get('/api/bcaas', controller.getAllBcaa)
+app.get('/api/multivitamins', controller.getAllMultivitamins)
 
 //community endpoints:
 app.get('/api/getposts', controller.getPosts)

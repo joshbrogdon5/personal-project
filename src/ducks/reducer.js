@@ -20,6 +20,8 @@ const STORE_CART_DATA = 'STORE_CART_DATA';
 const IMPORT_POSTS = 'IMPORT_POSTS';
 const STORE_PROTEINS = 'STORE_PROTEINS';
 const STORE_PREWORKOUTS = 'STORE_PREWORKOUTS';
+const STORE_BCAAS = 'STORE_BCAAS';
+const STORE_MULTIVITAMINS = 'STORE_MULTIVITAMINS';
 
 export const updateUserData = (user) => ({
   type: UPDATE_USER_DATA,
@@ -66,6 +68,16 @@ export const storePreworkouts = (preworkout) => ({
   payload: preworkout
 })
 
+export const storeBcaas = (bcaa) => ({
+  type: STORE_BCAAS,
+  payload: bcaa
+})
+
+export const storeMultivitamins = (vitamin) => ({
+  type: STORE_MULTIVITAMINS,
+  payload: vitamin
+})
+
 
 
 
@@ -92,6 +104,10 @@ export default function reducer(state = initialState, action){
         return Object.assign({}, state, {proteins: action.payload})
     case STORE_PREWORKOUTS:
         return Object.assign({}, state, {preworkouts: action.payload})
+    case STORE_BCAAS:
+        return Object.assign({}, state, {bcaas: action.payload})
+    case STORE_MULTIVITAMINS:
+        return Object.assign({}, state, {multivitamins: action.payload})
 
 
     default: return state
