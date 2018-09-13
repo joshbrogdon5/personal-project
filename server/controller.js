@@ -150,5 +150,28 @@ module.exports = {
                 res.status(500).send({errorMessage: "Something went wrong!"})
                 console.log(err);
             })
+    },
+    getAllProtein: (req,res,next) => {
+        const dbInstance = req.app.get('db');
+
+        dbInstance.get_protein()
+            .then(proteins => {
+                dbInstance.get_cartid(req.session.user.id)
+                    .then(cart => {
+                        if(cart[0]){
+                            req.session.user.cart_id = cart[0].id
+                            res.status(200).send({cart, proteins})
+                        }else{
+                            dbInstance.create_cart(req.session.user.id)
+                                .then(cart => { 
+                                    req.session.user.cart_id = cart[0].id
+                                    res.status(200).send({cart, proteins})})
+                        }
+                    })
+            })
+            .catch(err => {
+                res.status(500).send({errorMessage: "Something went wrong!"})
+                console.log(err);
+            })
     }
 }

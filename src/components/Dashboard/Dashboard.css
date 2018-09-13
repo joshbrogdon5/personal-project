@@ -129,7 +129,7 @@
     }
 }
 
-@media screen and (max-width: 1024px){
+/* @media screen and (max-width: 1024px){
     .buttons-container{
         display: flex;
         flex-direction: row;
@@ -159,4 +159,4 @@
         background-color: #343434;
         opacity: 0.8;
     }
-}
+} */
