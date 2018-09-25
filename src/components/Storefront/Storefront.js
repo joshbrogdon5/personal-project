@@ -10,19 +10,23 @@ export default class Storefront extends Component {
                 <Nav />
             <div className='inner-store-container'>
                 <Link className='protein' to='/protein'>
-                    <div className='protein'>
                         <h2>Proteins</h2>
-                    </div>
                 </Link>  
                 <Link className='preworkout' to='/preworkout'>
-                    <div className='preworkout' >
                         <h2>Pre-Workout</h2>
-                    </div>
                 </Link>  
-          <Link to='/multivitamins'><button>Multivitamins</button></Link>  
-          <Link to='/bcaa'><button>BCAA's</button></Link>  
-          <Link to='/creatine'><button>Creatine</button></Link>  
-          <Link to='/accessories'><button>Accessories</button></Link>  
+                <Link className='multivitamins' to='/multivitamins'>
+                    <h2>Multivitamins</h2>
+                </Link>  
+                <Link className='bcaa' to='/bcaa'>
+                    <h2>BCAA's</h2>
+                </Link>  
+                <Link className='creatine' to='/creatine'>
+                    <h2>Creatine</h2>
+                </Link>  
+                <Link className='accessories' to='/accessories'>
+                    <h2>Accessories</h2>
+                </Link>  
         </div>
       </div>
     )

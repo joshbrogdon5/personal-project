@@ -17,11 +17,35 @@ div.inner-store-container{
     width: 45%;
     height: 80vh;
     background-color: grey;
-    /* background-size: contain; */
+    border: 1px solid;
 }
 .preworkout{
     width: 45%;
     height: 80vh;
     background-color: grey;
-    background-size: cover;
+    border: 1px solid;
+}
+.multivitamins{
+    width: 45%;
+    height: 80vh;
+    background-color: grey;
+    border: 1px solid;
+}
+.bcaa{
+    width: 45%;
+    height: 80vh;
+    background-color: grey;
+    border: 1px solid;
+}
+.creatine{
+    width: 45%;
+    height: 80vh;
+    background-color: grey;
+    border: 1px solid;
+}
+.accessories{
+    width: 45%;
+    height: 80vh;
+    background-color: grey;
+    border: 1px solid;
 }
