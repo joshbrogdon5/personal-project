@@ -190,5 +190,25 @@ module.exports = {
                 res.status(500).send({errorMessage: "Something went wrong!"})
                 console.log(err);
             })
+    },
+    getAllCreatine: (req,res,next) => {
+        const dbInstance = req.app.get('db');
+
+        dbInstance.get_creatine()
+            .then(creatine => res.status(200).send(creatine))
+            .catch(err => {
+                res.status(500).send({errorMessage: "Something went wrong!"})
+                console.log(err);
+            })
+    },
+    getAllAccessories: (req,res,next) => {
+        const dbInstance = req.app.get('db');
+
+        dbInstance.get_accessories()
+            .then(accessories => res.status(200).send(accessories))
+            .catch(err => {
+                res.status(500).send({errorMessage: "Something went wrong!"})
+                console.log(err);
+            })
     }
 }

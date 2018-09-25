@@ -80,6 +80,8 @@ app.get('/api/proteins', controller.getAllProtein)
 app.get('/api/preworkouts', controller.getAllPreworkouts)
 app.get('/api/bcaas', controller.getAllBcaa)
 app.get('/api/multivitamins', controller.getAllMultivitamins)
+app.get('/api/creatine', controller.getAllCreatine)
+app.get('/api/accessories', controller.getAllAccessories)
 
 //community endpoints:
 app.get('/api/getposts', controller.getPosts)

@@ -1,0 +1,27 @@
+div.store-container{
+    width: 100%;
+}
+
+div.inner-store-container{
+    width: 90%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: auto;
+    justify-content: center;
+}
+
+.protein{
+    width: 45%;
+    height: 80vh;
+    background-color: grey;
+    /* background-size: contain; */
+}
+.preworkout{
+    width: 45%;
+    height: 80vh;
+    background-color: grey;
+    background-size: cover;
+}

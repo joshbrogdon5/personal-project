@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 import {connect} from 'react-redux';
-import {storeProducts, activeCart, storeCartData, storeProteins, storePreworkouts, storeBcaas, storeMultivitamins} from './../../ducks/reducer';
+import {storeProducts, activeCart, storeCartData, storeProteins, storePreworkouts, storeBcaas, storeMultivitamins, storeCreatine, storeAccessories} from './../../ducks/reducer';
 import './Dashboard.css';
 
 
@@ -26,6 +26,12 @@ class Dashboard extends Component {
         })
         axios.get('/api/multivitamins').then(results => {
             this.props.storeMultivitamins(results.data)
+        })
+        axios.get('/api/creatine').then(results => {
+            this.props.storeCreatine(results.data)
+        })
+        axios.get('/api/accessories').then(results => {
+            this.props.storeAccessories(results.data)
         })
     }
 
@@ -58,4 +64,4 @@ class Dashboard extends Component {
 }
 
 
-export default connect(null, {storeProducts, storeCartData, activeCart, storeProteins, storePreworkouts, storeBcaas, storeMultivitamins})(Dashboard);
+export default connect(null, {storeProducts, storeCartData, activeCart, storeProteins, storePreworkouts, storeBcaas, storeMultivitamins, storeCreatine, storeAccessories})(Dashboard);
