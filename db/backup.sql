@@ -29,6 +29,17 @@ create table orders(
     quantity integer
 );
 
+create table posts (
+    id serial primary key,
+    user_id integer references users(id),
+    post_title varchar(100),
+    post_content varchar(500),
+    post_likes integer default 0,
+    comment varchar(250),
+    post_comment_count int default 0,
+    image text
+);
+
 -- data info (products): 
 
 insert into products(category, title, description, image, price) values('Protein', 'Gold Standard 100% Whey', 'This is an award winning protein which has won supplement of the year for the past 10 years. This protein contains 24 grams of protein, 5.5 grams of BCAAs, 4 grams of glutamine and glutamic acid.', 'https://store.bbcomcdn.com/images/store/skuimage/sku_OPT2620008/image_skuOPT2620008_largeImage_X_450_white.jpg', 29.98);

@@ -127,5 +127,88 @@ module.exports = {
                 res.status(500).send({errorMessage: "Something went wrong!"})
                 console.log(err);
             })
+    },
+    createPost: (req, res) => {
+        const dbInstance = req.app.get('db');
+
+        dbInstance.create_post([req.session.user.id, req.body.title, req.body.content])
+            .then(() => {
+                dbInstance.get_posts()
+                    .then(posts => res.status(200).send(posts))
+            })
+            .catch(err => {
+                res.status(500).send({errorMessage: "Something went wrong!"})
+                console.log(err);
+            })
+    },
+    getPosts: (req, res) => {
+        const dbInstance = req.app.get('db');
+
+        dbInstance.get_posts()
+            .then(posts => res.status(200).send(posts))
+            .catch(err => {
+                res.status(500).send({errorMessage: "Something went wrong!"})
+                console.log(err);
+            })
+    },
+    getAllProtein: (req,res,next) => {
+        const dbInstance = req.app.get('db');
+
+        dbInstance.get_protein()
+            .then(proteins => res.status(200).send(proteins))
+            .catch(err => {
+                res.status(500).send({errorMessage: "Something went wrong!"})
+                console.log(err);
+            })
+    },
+    getAllPreworkouts: (req,res,next) => {
+        const dbInstance = req.app.get('db');
+
+        dbInstance.get_preworkout()
+            .then(preworkout => res.status(200).send(preworkout))
+            .catch(err => {
+                res.status(500).send({errorMessage: "Something went wrong!"})
+                console.log(err);
+            })
+    },
+    getAllBcaa: (req,res,next) => {
+        const dbInstance = req.app.get('db');
+
+        dbInstance.get_bcaa()
+            .then(bcaa => res.status(200).send(bcaa))
+            .catch(err => {
+                res.status(500).send({errorMessage: "Something went wrong!"})
+                console.log(err);
+            })
+    },
+    getAllMultivitamins: (req,res,next) => {
+        const dbInstance = req.app.get('db');
+
+        dbInstance.get_multivitamin()
+            .then(multivitamin => res.status(200).send(multivitamin))
+            .catch(err => {
+                res.status(500).send({errorMessage: "Something went wrong!"})
+                console.log(err);
+            })
+    },
+    getAllCreatine: (req,res,next) => {
+        const dbInstance = req.app.get('db');
+
+        dbInstance.get_creatine()
+            .then(creatine => res.status(200).send(creatine))
+            .catch(err => {
+                res.status(500).send({errorMessage: "Something went wrong!"})
+                console.log(err);
+            })
+    },
+    getAllAccessories: (req,res,next) => {
+        const dbInstance = req.app.get('db');
+
+        dbInstance.get_accessories()
+            .then(accessories => res.status(200).send(accessories))
+            .catch(err => {
+                res.status(500).send({errorMessage: "Something went wrong!"})
+                console.log(err);
+            })
     }
 }

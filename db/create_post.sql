@@ -1,0 +1,1 @@
+insert into posts(user_id, post_title, post_content) values($1, $2, $3)
