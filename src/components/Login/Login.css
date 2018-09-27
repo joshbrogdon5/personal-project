@@ -50,7 +50,7 @@
 }
 @media screen and (max-width: 600px){
     .main-container{
-        background-image: url('./../../images/gymbackground.jpg');
+        background-image: url('./../../images/loginbackground4.jpg');
         background-size: cover;
         background-position: center;
         width: 100%;
