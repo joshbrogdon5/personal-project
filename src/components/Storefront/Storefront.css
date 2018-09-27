@@ -27,6 +27,7 @@ div.inner-store-container{
 .protein:hover{
     filter: grayscale(0%);
     transition: filter .4s;
+    text-decoration: none;
 }
 
 .preworkout{
@@ -44,6 +45,7 @@ div.inner-store-container{
 .preworkout:hover{
     filter: grayscale(0%);
     transition: filter .4s;
+    text-decoration: none;
 }
 
 .multivitamins{
@@ -61,6 +63,7 @@ div.inner-store-container{
 .multivitamins:hover{
     filter: grayscale(0%);
     transition: filter .4s;
+    text-decoration: none;
 }
 
 .bcaa{
@@ -78,6 +81,7 @@ div.inner-store-container{
 .bcaa:hover{
     filter: grayscale(0%);
     transition: filter .4s;
+    text-decoration: none;
 }
 
 .creatine{
@@ -95,6 +99,7 @@ div.inner-store-container{
 .creatine:hover{
     filter: grayscale(0%);
     transition: filter .4s;
+    text-decoration: none;
 }
 
 .accessories{
@@ -112,4 +117,5 @@ div.inner-store-container{
 .accessories:hover{
     filter: grayscale(0%);
     transition: filter .4s;
+    text-decoration: none;
 }
