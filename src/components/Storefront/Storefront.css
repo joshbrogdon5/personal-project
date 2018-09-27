@@ -20,7 +20,12 @@ div.inner-store-container{
     background-image: url(../../images/proteinbackground.jpg);
     background-size: cover;
     background-position: center;
+    filter: grayscale(100%);
 }
+.protein:hover{
+    filter: grayscale(0%);
+}
+
 .preworkout{
     width: 45%;
     height: 80vh;
@@ -29,7 +34,12 @@ div.inner-store-container{
     background-image: url(../../images/preworkoutbackground.jpg);
     background-size: cover;
     background-position: center;
+    filter: grayscale(100%);
 }
+.preworkout:hover{
+    filter: grayscale(0%);
+}
+
 .multivitamins{
     width: 45%;
     height: 80vh;
@@ -38,7 +48,12 @@ div.inner-store-container{
     background-image: url(../../images/vitaminbackground.jpg);
     background-size: cover;
     background-position: center;
+    filter: grayscale(100%);
 }
+.multivitamins:hover{
+    filter: grayscale(0%);
+}
+
 .bcaa{
     width: 45%;
     height: 80vh;
@@ -47,7 +62,12 @@ div.inner-store-container{
     background-image: url(../../images/bcaabackground.jpg);
     background-size: cover;
     background-position: center;
+    filter: grayscale(100%);
 }
+.bcaa:hover{
+    filter: grayscale(0%);
+}
+
 .creatine{
     width: 45%;
     height: 80vh;
@@ -56,7 +76,12 @@ div.inner-store-container{
     background-image: url(../../images/creatinebackground.jpg);
     background-size: cover;
     background-position: left;
+    filter: grayscale(100%);
 }
+.creatine:hover{
+    filter: grayscale(0%);
+}
+
 .accessories{
     width: 45%;
     height: 80vh;
@@ -65,4 +90,8 @@ div.inner-store-container{
     background-image: url(../../images/accessoriesbackground.jpg);
     background-size: cover;
     background-position: center;
+    filter: grayscale(100%);
+}
+.accessories:hover{
+    filter: grayscale(0%);
 }
