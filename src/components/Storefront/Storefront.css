@@ -22,9 +22,11 @@ div.inner-store-container{
     background-position: center;
     filter: grayscale(100%);
     margin: 4px;
+    transition: filter .4s;
 }
 .protein:hover{
     filter: grayscale(0%);
+    transition: filter .4s;
 }
 
 .preworkout{
@@ -37,9 +39,11 @@ div.inner-store-container{
     background-position: center;
     filter: grayscale(100%);
     margin: 4px;
+    transition: filter .4s;    
 }
 .preworkout:hover{
     filter: grayscale(0%);
+    transition: filter .4s;
 }
 
 .multivitamins{
@@ -52,9 +56,11 @@ div.inner-store-container{
     background-position: center;
     filter: grayscale(100%);
     margin: 4px;
+    transition: filter .4s;
 }
 .multivitamins:hover{
     filter: grayscale(0%);
+    transition: filter .4s;
 }
 
 .bcaa{
@@ -67,9 +73,11 @@ div.inner-store-container{
     background-position: center;
     filter: grayscale(100%);
     margin: 4px;
+    transition: filter .4s;
 }
 .bcaa:hover{
     filter: grayscale(0%);
+    transition: filter .4s;
 }
 
 .creatine{
@@ -82,9 +90,11 @@ div.inner-store-container{
     background-position: left;
     filter: grayscale(100%);
     margin: 4px;
+    transition: filter .4s;
 }
 .creatine:hover{
     filter: grayscale(0%);
+    transition: filter .4s;
 }
 
 .accessories{
@@ -97,7 +107,9 @@ div.inner-store-container{
     background-position: center;
     filter: grayscale(100%);
     margin: 4px;
+    transition: filter .4s;
 }
 .accessories:hover{
     filter: grayscale(0%);
+    transition: filter .4s;
 }
