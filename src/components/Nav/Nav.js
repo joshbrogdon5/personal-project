@@ -38,7 +38,7 @@ class Nav extends Component {
                     </div>
                     <div className='nav-buttons-container' id={this.state.showButtons ? 'expand' : null}>
                         <Link to='/storefront'><button className='nav-buttons' >Store</button></Link>
-                        <Link to='/exercise'><button className='nav-buttons' >Exercise</button></Link>
+                        {/* <Link to='/exercise'><button className='nav-buttons' >Exercise</button></Link> */}
                         <Link to='/community'><button className='nav-buttons' >Community</button></Link>
                         <Link  to='/cart'><button className='nav-buttons' >Cart</button></Link>
                         <Link  to='/accountpage'><button className='nav-buttons' >Account</button></Link>
