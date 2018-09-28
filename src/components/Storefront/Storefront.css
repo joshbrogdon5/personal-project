@@ -11,6 +11,7 @@ div.inner-store-container{
     align-items: center;
     margin: auto;
     justify-content: center;
+    text-align: center;
 }
 
 .protein{
@@ -118,4 +119,58 @@ div.inner-store-container{
     filter: grayscale(0%);
     transition: filter .4s;
     text-decoration: none;
+}
+
+h2.category-title{
+    color: white;
+    background-color: black;
+}
+
+@media screen and (max-width: 600px){
+    div.inner-store-container{
+        width: 90%;
+        margin-top: 20px;
+        display: flex;
+        flex-direction: column;
+        /* flex-wrap: wrap; */
+        align-items: center;
+        margin: auto;
+        justify-content: center;
+    }
+
+    .protein{
+        width: 90%;
+        height: 40vh;
+        filter: grayscale(0%);
+    }
+
+    .preworkout{
+        width: 90%;
+        height: 40vh;
+        filter: grayscale(0%);
+    }
+
+    .multivitamins{
+        width: 90%;
+        height: 40vh;
+        filter: grayscale(0%);
+    }
+
+    .bcaa{
+        width: 90%;
+        height: 40vh;
+        filter: grayscale(0%);
+    }
+
+    .creatine{
+        width: 90%;
+        height: 40vh;
+        filter: grayscale(0%);
+    }
+
+    .accessories{
+        width: 90%;
+        height: 40vh;
+        filter: grayscale(0%);
+    }
 }

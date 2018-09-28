@@ -33,7 +33,7 @@ class Nav extends Component {
         return(
                 <nav className='nav' id='myNav'>
                     <div className='nav-title-container'>
-                        <Link to='/dashboard'><img style={imgStyle} src={dumbell} alt='dumbell'/></Link>
+                        <Link to='/storefront'><img style={imgStyle} src={dumbell} alt='dumbell'/></Link>
                         <h2 className='nav-title'>Swoley Bros</h2>
                     </div>
                     <div className='nav-buttons-container' id={this.state.showButtons ? 'expand' : null}>
