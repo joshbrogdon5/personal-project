@@ -2,8 +2,37 @@ import React, { Component } from 'react'
 import Nav from '../Nav/Nav'
 import {Link} from 'react-router-dom'
 import './Storefront.css'
+import axios from 'axios';
+import {connect} from 'react-redux';
+import {storeProducts, activeCart, storeCartData, storeProteins, storePreworkouts, storeBcaas, storeMultivitamins, storeCreatine, storeAccessories} from './../../ducks/reducer';
 
-export default class Storefront extends Component {
+class Storefront extends Component {
+
+    componentDidMount(){
+        axios.get('/api/products').then(results => {
+            this.props.storeProducts(results.data.products)
+            this.props.activeCart(results.data.cart)
+        })
+        axios.get('/api/proteins').then(results => {
+            this.props.storeProteins(results.data)
+        })
+        axios.get('/api/preworkouts').then(results => {
+            this.props.storePreworkouts(results.data)
+        })
+        axios.get('/api/bcaas').then(results => {
+            this.props.storeBcaas(results.data)
+        })
+        axios.get('/api/multivitamins').then(results => {
+            this.props.storeMultivitamins(results.data)
+        })
+        axios.get('/api/creatine').then(results => {
+            this.props.storeCreatine(results.data)
+        })
+        axios.get('/api/accessories').then(results => {
+            this.props.storeAccessories(results.data)
+        })
+    }
+
   render() {
     return (
         <div className='store-container'>
@@ -32,3 +61,5 @@ export default class Storefront extends Component {
     )
   }
 }
+
+export default connect(null, {storeProducts, storeCartData, activeCart, storeProteins, storePreworkouts, storeBcaas, storeMultivitamins, storeCreatine, storeAccessories})(Storefront);
