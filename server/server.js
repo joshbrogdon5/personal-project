@@ -19,7 +19,7 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING, REACT_APP_DOMAIN, REACT_APP_CLIENT_ID, CLIENT_SECRET, REACT_APP_LOCALHOST_DASH} = process.env;
+const {SERVER_PORT, SESSION_SECRET, CONNECTION_STRING, REACT_APP_DOMAIN, REACT_APP_CLIENT_ID, CLIENT_SECRET, REACT_APP_LOCALHOST_STORE} = process.env;
 
 app.use(session({
     secret: SESSION_SECRET,
@@ -60,10 +60,10 @@ app.get('/auth/callback', async (req,res) => {
     let foundUser = await db.find_user([sub]);
     if(foundUser[0]){
         req.session.user = foundUser[0]
-        res.redirect(REACT_APP_LOCALHOST_DASH)
+        res.redirect(REACT_APP_LOCALHOST_STORE)
     }else {
         let createdUser = await db.create_user([name, email, sub, picture])
-        res.redirect(REACT_APP_LOCALHOST_DASH)
+        res.redirect(REACT_APP_LOCALHOST_STORE)
     }
 });
 
