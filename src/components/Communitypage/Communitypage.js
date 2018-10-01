@@ -44,7 +44,7 @@ class Communitypage extends Component {
       let displayPosts = this.props.posts.map((e,i) => {
           return(
               <div className='postsMap' key={i}>
-                <h4 className='postTitle'>{e.post_title}</h4>
+                <h5 className='postTitle'>{e.post_title}</h5>
                 <img style={imgStyle} src={e.picture} />
                 <h6>{e.user_name}</h6>
                 <p>{e.post_content}</p>
@@ -55,8 +55,10 @@ class Communitypage extends Component {
     <div className='displayPostsContainer'>
           <Nav />
       <div className='displayPosts'>
-        <h2>Welcome to the SwoleyBros Community.</h2>
-        <input placeholder='title' onChange={(e) => this.postTitle(e.target.value)} type='text'/>
+        <div className='createPost'>
+            <h2>Welcome to the SwoleyBros Community.</h2>
+            <input placeholder='title' onChange={(e) => this.postTitle(e.target.value)} type='text'/>
+        </div>
         <input placeholder='Put content here...' onChange={(e) => this.postContent(e.target.value)} type='text'/>
         <button onClick={() => this.createPost()}>Create Post</button>
         {displayPosts}
