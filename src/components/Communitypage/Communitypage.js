@@ -3,6 +3,7 @@ import Nav from './../Nav/Nav'
 import axios from 'axios'
 import {importPosts} from '../../ducks/reducer';
 import {connect} from 'react-redux';
+import './Communitypage.css';
 
 class Communitypage extends Component {
     constructor(){
@@ -37,11 +38,12 @@ class Communitypage extends Component {
   render() {
       const imgStyle = {
           height: '80px',
-          width: '80px'
+          width: '80px',
+          borderRadius: '50%'
       }
       let displayPosts = this.props.posts.map((e,i) => {
           return(
-              <div key={i}>
+              <div className='postsMap' key={i}>
                 <img style={imgStyle} src={e.picture} />
                 <h6>{e.user_name}</h6>
                 <h4>{e.post_title}</h4>
@@ -50,14 +52,16 @@ class Communitypage extends Component {
           )
       })
     return (
-      <div>
+    <div className='displayPostsContainer'>
           <Nav />
+      <div className='displayPosts'>
         <h1>Community Page</h1>
         <input placeholder='title' onChange={(e) => this.postTitle(e.target.value)} type='text'/>
         <input placeholder='Put content here...' onChange={(e) => this.postContent(e.target.value)} type='text'/>
         <button onClick={() => this.createPost()}>Create Post</button>
         {displayPosts}
       </div>
+    </div>
     )
   }
 }
