@@ -138,6 +138,11 @@ h2.category-title{
         justify-content: center;
     }
 
+    h2.category-title{
+        color: black;
+        background-color: #CC8800;
+    }
+
     .protein{
         width: 90%;
         height: 40vh;

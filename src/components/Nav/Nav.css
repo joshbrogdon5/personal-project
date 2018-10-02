@@ -32,12 +32,13 @@
     display: flex;
     width: 50%;
     justify-content: space-around;
-    font-size: 1.2rem;
 }
 .nav-buttons{
     border: none;
     background-color: transparent;
     border-radius: 4px;
+    font-size: 1.3rem;
+    font-weight: 450;
 }
 .nav-buttons:hover{
     background-color: #dfdfdf;
@@ -51,6 +52,10 @@
 }
 
 @media screen and (max-width: 600px){
+    #myNav{
+        background-color: #B37700
+    }
+
     #expand{
         display: none;
     }
@@ -65,6 +70,10 @@
         /* margin-top: 100px; */
         display: flex;
         flex-direction: column;
+    }
+    .nav-buttons{
+        font-weight: 500;
+        font-size: 1.4rem;
     }
     .nav-title{
         display: none;
