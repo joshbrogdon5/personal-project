@@ -3,6 +3,7 @@ div.displayPostsContainer{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #EBEBE0;
 }
 
 div.displayPosts{
@@ -11,7 +12,11 @@ div.displayPosts{
 	flex-direction: column;
 	justify-content: space-around;
 	align-items: center;
-	align-content: center;
+    align-content: center;
+    background-color: #fff;
+    margin-top: 8px;
+    border-radius: 3px;
+    border: 1px solid #e1e1e1;
 }
 
 div.createPost{
@@ -21,7 +26,8 @@ div.createPost{
     flex-direction: column;
     align-items: center;
     padding: 5px;
-    background-color: #f2f2f2;  
+    background-color: #f2f2f2;
+    border-radius: 3px;  
 }
 
 div.postsMap{
@@ -52,6 +58,14 @@ button.createPostButton{
     margin: 3px;
     font-size: 1.2rem;
     font-weight: 450;
+    box-shadow: none;
+    transition: box-shadow .4s;
+}
+
+button.createPostButton:hover{
+    cursor: pointer;
+    box-shadow: 1px 1px 5px grey;
+    transition: box-shadow .4s;
 }
 
 @media screen and (max-width: 600px){
