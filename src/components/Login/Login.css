@@ -18,12 +18,12 @@
     height: 30%;
     display: flex;
     align-items: center;
-    color: black;
+    color: #33B1EF;
     animation: title 6s linear infinite;
 }
 @keyframes title{
     0%{color: white;}
-    50%{color: black;}
+    50%{color: #33B1EF;}
     100%{color: white;}
 }
 .button-container{
@@ -53,7 +53,7 @@
 }
 @media screen and (max-width: 600px){
     .main-container{
-        background-image: url('./../../images/loginbackground2.jpg');
+        background-image: url('./../../images/loginbackground1.jpg');
         background-size: cover;
         background-position: center;
         width: 100%;
@@ -68,7 +68,7 @@
         display: flex;
         align-items: center;
         text-align: center;
-        color: black;
+        color: #33B1EF;
         animation: title 7s linear infinite;
         font-weight: 500;
     }
