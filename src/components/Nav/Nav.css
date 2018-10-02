@@ -23,7 +23,7 @@
     margin-left: 10px;
 }
 .nav-title{
-    color: #fff;
+    color: #33B1EF;
     font-size: 3rem;
     margin-left: 5px;
     font-family: 'Roboto Slab', serif;
@@ -46,7 +46,7 @@
 .nav-buttons:hover{
     /* background-color: #dfdfdf; */
     border-bottom: 3px solid;
-    border-bottom-color: #fff;
+    border-bottom-color: #33B1EF;
     transition: background-color 0.3s;
     cursor: pointer;
     transition: border-bottom-color .4s ease-out;
@@ -59,9 +59,6 @@
 }
 
 @media screen and (max-width: 600px){
-    #myNav{
-        background-color: #B37700
-    }
 
     #expand{
         display: none;
@@ -82,6 +79,7 @@
         font-weight: 500;
         font-size: 1.4rem;
         padding: 0px;
+        color: #33B1EF;
     }
     .nav-title{
         display: none;

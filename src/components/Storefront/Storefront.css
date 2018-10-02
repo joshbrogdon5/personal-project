@@ -12,6 +12,7 @@ div.inner-store-container{
     margin: auto;
     justify-content: center;
     text-align: center;
+    align-content: center;
 }
 
 .protein{
@@ -122,8 +123,15 @@ div.inner-store-container{
 }
 
 h2.category-title{
-    color: white;
-    background-color: black;
+    color: #33B1EF;
+    top: 50%;
+    transform: translateY(-50%);
+    position: relative;
+    border: 3px solid #33B1EF;
+    width: 60%;
+    margin: auto;
+    font-weight: 600;
+    font-size: 2.5rem;
 }
 
 @media screen and (max-width: 600px){
@@ -136,11 +144,6 @@ h2.category-title{
         align-items: center;
         margin: auto;
         justify-content: center;
-    }
-
-    h2.category-title{
-        color: black;
-        background-color: #CC8800;
     }
 
     .protein{
@@ -177,5 +180,9 @@ h2.category-title{
         width: 90%;
         height: 40vh;
         filter: grayscale(0%);
+    }
+
+    h2.category-title{
+        width: 65%;
     }
 }
