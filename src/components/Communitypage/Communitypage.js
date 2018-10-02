@@ -56,11 +56,11 @@ class Communitypage extends Component {
           <Nav />
       <div className='displayPosts'>
         <div className='createPost'>
-            <h2>Welcome to the SwoleyBros Community.</h2>
-            <input placeholder='title' onChange={(e) => this.postTitle(e.target.value)} type='text'/>
+            <h2>Join the Community!</h2>
+            <input className='communityInput' placeholder='title' onChange={(e) => this.postTitle(e.target.value)} type='text'/>
+            <input className='communityInput' placeholder='Put content here...' onChange={(e) => this.postContent(e.target.value)} type='text'/>
+            <button className='createPostButton' onClick={() => this.createPost()}>Create Post</button>
         </div>
-        <input placeholder='Put content here...' onChange={(e) => this.postContent(e.target.value)} type='text'/>
-        <button onClick={() => this.createPost()}>Create Post</button>
         {displayPosts}
       </div>
     </div>

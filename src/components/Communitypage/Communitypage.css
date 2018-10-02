@@ -15,9 +15,13 @@ div.displayPosts{
 }
 
 div.createPost{
+    margin-top: 5px;
+    border: 1px solid #c8c8c8;
     display: flex;
     flex-direction: column;
-	align-items: center;    
+    align-items: center;
+    padding: 5px;
+    background-color: #f2f2f2;  
 }
 
 div.postsMap{
@@ -27,4 +31,31 @@ div.postsMap{
     padding: 5px;
     background-color: #f4f4f4;
     border-radius: 4px;
+}
+
+input.communityInput{
+    border: 1px solid #BCBCBC;
+    border-radius: 3px;
+    padding: 5px;
+    font-size: 1.2rem;
+    font-family: ProximaNova,Arial,sans-serif;
+    box-shadow: 0 0 0 1px transparent, inset 0 15px 10px -17px #000, 0 1px 0 #FFB3FF;
+    margin: 3px;
+}
+
+button.createPostButton{
+    background-color: #747474;
+    width: 60%;
+    border: 1px solid #BCBCBC;
+    border-radius: 3px;
+    padding: 2px;
+    margin: 3px;
+    font-size: 1.2rem;
+    font-weight: 450;
+}
+
+@media screen and (max-width: 600px){
+     div.displayPosts{
+         width: 100%;
+     }
 }
