@@ -8,7 +8,8 @@ const initialState = {
     multivitamins: [],
     bcaas: [],
     creatine: [],
-    accessories:[]
+    accessories:[],
+    userPosts: []
 }
 
 const UPDATE_USER_DATA = 'UPDATE_USER_DATA';
@@ -24,6 +25,7 @@ const STORE_BCAAS = 'STORE_BCAAS';
 const STORE_MULTIVITAMINS = 'STORE_MULTIVITAMINS';
 const STORE_CREATINE = 'STORE_CREATINE';
 const STORE_ACCESSORIES = 'STORE_ACCESSORIES';
+const STORE_USER_POSTS = 'STORE_USER_POSTS';
 
 export const updateUserData = (user) => ({
   type: UPDATE_USER_DATA,
@@ -90,6 +92,10 @@ export const storeAccessories = (accessories) => ({
   payload: accessories
 })
 
+export const storeUserPosts = (userPosts) => ({
+  type: STORE_USER_POSTS,
+  payload: userPosts
+})
 
 
 export default function reducer(state = initialState, action){
@@ -122,6 +128,8 @@ export default function reducer(state = initialState, action){
         return Object.assign({}, state, {creatine: action.payload})
     case STORE_ACCESSORIES:
         return Object.assign({}, state, {accessories: action.payload})
+    case STORE_USER_POSTS:
+        return Object.assign({}, state, {userPosts: action.payload})
 
 
     default: return state

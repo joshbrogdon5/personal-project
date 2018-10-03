@@ -82,6 +82,7 @@ app.get('/api/bcaas', controller.getAllBcaa)
 app.get('/api/multivitamins', controller.getAllMultivitamins)
 app.get('/api/creatine', controller.getAllCreatine)
 app.get('/api/accessories', controller.getAllAccessories)
+app.get('/api/getUserPosts', controller.getUserPosts)
 
 //community endpoints:
 app.get('/api/getposts', controller.getPosts)

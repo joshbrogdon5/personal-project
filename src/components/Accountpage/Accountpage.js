@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios';
 import {connect} from 'react-redux';
-import {updateUserData} from './../../ducks/reducer'
+import {updateUserData, storeUserPosts} from './../../ducks/reducer'
 import Nav from '../Nav/Nav';
 import {Link} from 'react-router-dom';
 import './Accountpage.css';
@@ -12,10 +12,21 @@ componentDidMount(){
     axios.get('/api/user-data').then(res => {
         this.props.updateUserData(res.data)
     })
+    axios.get('/api/getUserPosts').then(results => {
+        this.props.storeUserPosts(results.data)
+    })
 }
 
   render() {
-      let {user} = this.props;
+      let {user, userPosts} = this.props;
+      let displayUserPosts = userPosts.map((e,i) => {
+          return(
+              <div key={i}>
+                    <h4>{e.post_title}</h4>
+                    <p>{e.post_content}</p>  
+              </div>
+          )
+      })
 
     const mainStyle = {
         height: '100vh',
@@ -49,6 +60,13 @@ componentDidMount(){
                             <img style={imgStyle} src={user.picture} alt="" />
                             <h6 style={textStyle}>Account Holder: {user.user_name}</h6>
                             <h6 style={textStyle}>Account Email: {user.email}</h6>
+                            {userPosts[0] ? (
+                                <div>
+                                    <h3>Posts:</h3>
+                                    {displayUserPosts}
+                                </div>                       
+                            ): <p>No Posts yet!</p>}
+
                         </div>
                     ) : <p>Please Login <Link to='/'>Here</Link></p>
                 }
@@ -61,9 +79,10 @@ componentDidMount(){
 
 function mapStateToProps(state){
     return {
-        user: state.user
+        user: state.user,
+        userPosts: state.userPosts
     }
 }
 
 
-export default connect(mapStateToProps, {updateUserData})(Accountpage);
+export default connect(mapStateToProps, {updateUserData, storeUserPosts})(Accountpage);

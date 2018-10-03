@@ -210,5 +210,15 @@ module.exports = {
                 res.status(500).send({errorMessage: "Something went wrong!"})
                 console.log(err);
             })
+    },
+    getUserPosts: (req,res,next) => {
+        const dbInstance = req.app.get('db');
+
+        dbInstance.get_user_posts(req.session.user.id)
+            .then(posts => res.status(200).send(posts))
+            .catch(err => {
+                res.status(500).send({errorMessage: "Something went wrong!"})
+                console.log(err);
+            })
     }
 }
