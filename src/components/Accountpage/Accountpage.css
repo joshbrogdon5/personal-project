@@ -15,13 +15,20 @@
 }
 
 h2.accountHeader{
-    border-bottom: 1px solid #e1e1e1;
+    border-bottom: 1px solid #c7c7c7;
     padding: 5px;
     padding-bottom: 15px;
+    font-family: ProximaNova;
 }
 
 div.displayUserPosts{
-    border-top: 1px solid #e1e1e1;
+    border-top: 1px solid #c7c7c7;
+    padding: 5px;
+}
+
+div.displayUserPosts > h4{
+    font-family: ProximaNova;
+    font-weight: 400;
 }
 
 @media screen and (max-width: 600px){
@@ -31,6 +38,7 @@ div.displayUserPosts{
         animation: accountPageAnimation 30s linear infinite;
     }
     .account-content-container{
-        width: 85%;
+        width: 100%;
+        margin-top: 0px;
     }
 }
