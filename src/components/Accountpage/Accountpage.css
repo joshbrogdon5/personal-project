@@ -20,6 +20,10 @@ h2.accountHeader{
     padding-bottom: 15px;
 }
 
+div.displayUserPosts{
+    border-top: 1px solid #e1e1e1;
+}
+
 @media screen and (max-width: 600px){
     .accountpage-main{
         background-position: center;
