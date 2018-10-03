@@ -59,7 +59,7 @@ componentDidMount(){
                             <h6>Email: {user.email}</h6>
                             {userPosts[0] ? (
                                 <div className='displayUserPosts'>
-                                    <h3>Posts:</h3>
+                                    <h4>Your Posts:</h4>
                                     {displayUserPosts}
                                 </div>                       
                             ): <p>No Posts yet!</p>}
