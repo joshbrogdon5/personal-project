@@ -46,7 +46,7 @@ class Communitypage extends Component {
               <div className='postsMap' key={i}>
                 <h5 className='postTitle'>{e.post_title}</h5>
                 <img style={imgStyle} src={e.picture} />
-                <h6>{e.user_name}</h6>
+                <h6>By: {e.user_name}</h6>
                 <p>{e.post_content}</p>
               </div>
           )
@@ -57,8 +57,8 @@ class Communitypage extends Component {
       <div className='displayPosts'>
         <div className='createPost'>
             <h2>Join the Community!</h2>
-            <input className='communityInput' placeholder='title' onChange={(e) => this.postTitle(e.target.value)} type='text'/>
-            <input className='communityInput' placeholder='Put content here...' onChange={(e) => this.postContent(e.target.value)} type='text'/>
+            <input className='communityInput' placeholder='Post Title' onChange={(e) => this.postTitle(e.target.value)} type='text'/>
+            <input className='communityInput' placeholder='Post content...' onChange={(e) => this.postContent(e.target.value)} type='text'/>
             <button className='createPostButton' onClick={() => this.createPost()}>Create Post</button>
         </div>
         {displayPosts}

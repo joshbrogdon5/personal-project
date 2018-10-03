@@ -71,5 +71,6 @@ button.createPostButton:hover{
 @media screen and (max-width: 600px){
      div.displayPosts{
          width: 100%;
+         margin-top: 0px;
      }
 }
