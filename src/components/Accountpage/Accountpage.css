@@ -1,26 +1,23 @@
 .accountpage-main{
-    background-image: url('./../../images/barbellbackground.jpg');
-    background-position: center;
-    background-size: cover;
-    
-    animation: accountPageAnimation 10s linear infinite;
+    width: 100%;
+    background-color: #EBEBE0;    
 }
 .account-content-container{
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    align-content: center;
-    align-items: center;
-    background: #343434;
-    text-align: center;
-    height: 70vh;
-    width: 30%;
-    box-shadow: 4px 6px;
+    background: #fff;
+    width: 70%;
+    /* height: 100%; */
+    margin-top: 8px;
+    border-radius: 3px;
+    border: 1px solid #e1e1e1;
+    padding: 10px;
 }
-@keyframes accountPageAnimation{
-    0% {background-position: 100% 0;}
-    50% {background-position: 0 0;}
-    100% {background-position: 100% 0;}
+
+h2.accountHeader{
+    border-bottom: 1px solid #e1e1e1;
+    padding: 5px;
+    padding-bottom: 15px;
 }
 
 @media screen and (max-width: 600px){

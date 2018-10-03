@@ -21,8 +21,8 @@ componentDidMount(){
       let {user, userPosts} = this.props;
       let displayUserPosts = userPosts.map((e,i) => {
           return(
-              <div key={i}>
-                    <h4>{e.post_title}</h4>
+              <div className='mapUserPosts' key={i}>
+                    <h5>{e.post_title}</h5>
                     <p>{e.post_content}</p>  
               </div>
           )
@@ -39,13 +39,11 @@ componentDidMount(){
         alignContent: 'center',
     }
     const imgStyle = {
-        width: '300px',
-        height: '300px',
-        boxShadow: '3px 5px',
-        marginBottom: '10px'
-    }
-    const textStyle = {
-        color: '#dfdfdf'
+        width: '100px',
+        height: '100px',
+        marginBottom: '10px',
+        marginTop: '10px',
+        borderRadius: '50%'
     }
 
     return (
@@ -53,15 +51,15 @@ componentDidMount(){
         <Nav />
         <div style={mainStyle} className='accountpage-main'>
             <div className='account-content-container'>
-                <h2 style={textStyle}>Account Information</h2>
+                <h2 className='accountHeader' >My Account</h2>
                 {
                     user.user_name? (
                         <div>
                             <img style={imgStyle} src={user.picture} alt="" />
-                            <h6 style={textStyle}>Account Holder: {user.user_name}</h6>
-                            <h6 style={textStyle}>Account Email: {user.email}</h6>
+                            <h6>Name: {user.user_name}</h6>
+                            <h6>Email: {user.email}</h6>
                             {userPosts[0] ? (
-                                <div>
+                                <div className='displayUserPosts'>
                                     <h3>Posts:</h3>
                                     {displayUserPosts}
                                 </div>                       
