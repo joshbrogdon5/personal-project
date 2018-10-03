@@ -18,13 +18,14 @@ div.inner-store-container{
 .protein{
     width: 45%;
     height: 80vh;
-    border: 1px solid;
+    border: 1px solid #33B1EF;
     background-image: url(../../images/proteinbackground.jpg);
     background-size: cover;
     background-position: center;
     filter: grayscale(100%);
     margin: 4px;
     transition: filter .4s;
+    border-radius: 3px;
 }
 .protein:hover{
     filter: grayscale(0%);
@@ -36,13 +37,14 @@ div.inner-store-container{
     width: 45%;
     height: 80vh;
     background-color: grey;
-    border: 1px solid;
+    border: 1px solid #33B1EF;
     background-image: url(../../images/preworkoutbackground.jpg);
     background-size: cover;
     background-position: center;
     filter: grayscale(100%);
     margin: 4px;
-    transition: filter .4s;    
+    transition: filter .4s;   
+    border-radius: 3px;
 }
 .preworkout:hover{
     filter: grayscale(0%);
@@ -54,13 +56,14 @@ div.inner-store-container{
     width: 45%;
     height: 80vh;
     background-color: grey;
-    border: 1px solid;
+    border: 1px solid #33B1EF;
     background-image: url(../../images/vitaminbackground.jpg);
     background-size: cover;
     background-position: center;
     filter: grayscale(100%);
     margin: 4px;
     transition: filter .4s;
+    border-radius: 3px;
 }
 .multivitamins:hover{
     filter: grayscale(0%);
@@ -72,13 +75,14 @@ div.inner-store-container{
     width: 45%;
     height: 80vh;
     background-color: grey;
-    border: 1px solid;
+    border: 1px solid #33B1EF;
     background-image: url(../../images/bcaabackground.jpg);
     background-size: cover;
     background-position: center;
     filter: grayscale(100%);
     margin: 4px;
     transition: filter .4s;
+    border-radius: 3px;
 }
 .bcaa:hover{
     filter: grayscale(0%);
@@ -90,13 +94,14 @@ div.inner-store-container{
     width: 45%;
     height: 80vh;
     background-color: grey;
-    border: 1px solid;
+    border: 1px solid #33B1EF;
     background-image: url(../../images/creatinebackground.jpg);
     background-size: cover;
     background-position: left;
     filter: grayscale(100%);
     margin: 4px;
     transition: filter .4s;
+    border-radius: 3px;
 }
 .creatine:hover{
     filter: grayscale(0%);
@@ -108,13 +113,14 @@ div.inner-store-container{
     width: 45%;
     height: 80vh;
     background-color: grey;
-    border: 1px solid;
+    border: 1px solid #33B1EF;
     background-image: url(../../images/accessoriesbackground.jpg);
     background-size: cover;
     background-position: center;
     filter: grayscale(100%);
     margin: 4px;
     transition: filter .4s;
+    border-radius: 3px;
 }
 .accessories:hover{
     filter: grayscale(0%);
