@@ -34,7 +34,6 @@ componentDidMount(){
         display: 'flex',
         flexDirection: 'column',
         flexWrap: 'nowrap',
-        justifyContent: 'center',
         alignItems: 'center',
         alignContent: 'center',
     }
