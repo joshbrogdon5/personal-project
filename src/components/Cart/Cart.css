@@ -1,28 +1,47 @@
 .displayDivContainer{
-    margin: 10px;
-    border: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #EBEBE0;
+    width: 100%;
+    height: 100vh;
 } 
 .displayDiv{
 	display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
 	justify-content: center;
-	align-items: stretch;
-	align-content: center;
+	align-items: center;
+    align-content: center;
+    background-color: #EBEBE0;
+    width: 80%;
+    margin-top: 10px;
 }
 .mapDivCart{
+    width: 100%;
     position: relative;
     display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: flex-start;
 	align-items: center;
-	align-content: center;
-    border: 1px solid grey;
+    align-content: center;
+    background-color: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+    margin: 5px;
+    padding: 5px;
 }
 .checkout{
+    width: 50%;
+    background-color: #fff;
+    margin-top: 10px;
     text-align: center;
-    border: 1px solid blue;
+    border: 1px solid #e1e1e1;
+    border-radius: 3px;
+}
+.checkout:hover{
+    border: 1px solid #33B1EF;
 }
 .cart-buttons{
     border: none;
@@ -39,7 +58,20 @@
     cursor: pointer;
     transition: color 0.3s, background-color 0.3s;
     text-shadow: #dfdfdf;
-
+}
+button.saveButton{
+    background-image: linear-gradient(rgb(125, 197, 238), rgb(0, 140, 221) 85%, rgb(48, 162, 228));;
+    border-radius: 4px;
+    border: 1px solid #e1e1e1;
+    color: #fff;
+    height: 35px;
+    width: 50px;
+    text-shadow: rgba(0, 0, 0, 0.25) 0px -1px 0px;
+    box-shadow: rgba(255, 255, 255, 0.25) 0px 1px 0px inset;
+}
+button.saveButton:hover{
+    cursor: pointer;
+    box-shadow: none;
 }
 
 @media screen and (max-width: 600px){

@@ -82,13 +82,6 @@ class Cart extends Component {
             top: '0px',
             right: '0px'
         }
-        // const formStyle = {
-        //     display: 'flex',
-        //     flexDirection: 'row',
-        //     justifyContent: 'center',
-        //     flexWrap: 'nowrap',
-        //     margin: '4px'
-        // }
         let shoppingCartDisplay = this.props.shoppingCart.map((e,i) => {
         return(
             <div className='mapDivCart' key={i}>
@@ -106,7 +99,7 @@ class Cart extends Component {
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                             </select>
-                        <button onClick={() => this.updateQuantity(e.id)}>save</button>  
+                        <button className='saveButton' onClick={() => this.updateQuantity(e.id)}>save</button>  
                         </form>  
                         <div>
                             <button style={buttonPosition} type='button' class='close' aria-label='Close' onClick={() => this.deleteFromCart(e.id)}>
@@ -121,7 +114,6 @@ class Cart extends Component {
             <div>
                 <Nav />
                 <div className='displayDivContainer'>
-                    <div>
                         {shoppingCartDisplay[0] ?
                         <div className='displayDiv' >
                             {shoppingCartDisplay}
@@ -137,7 +129,6 @@ class Cart extends Component {
                         : <div>
                             <h1>Your cart is empty!</h1>
                         </div>}
-                    </div>
                 </div>
             </div>
         )
