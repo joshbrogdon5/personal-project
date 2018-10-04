@@ -6,7 +6,8 @@ import axios from 'axios';
 import stripe from './../../stripeKey';
 import StripeCheckout from 'react-stripe-checkout';
 import {withRouter} from 'react-router';
-import './Cart.css'
+import './Cart.css';
+import sadFace from '../../images/sadface.png';
 
 
 class Cart extends Component {
@@ -126,8 +127,9 @@ class Cart extends Component {
                                 />
                             </div>
                         </div>
-                        : <div>
+                        : <div className='cartEmpty' >
                             <h1>Your cart is empty!</h1>
+                            <img src={sadFace} />
                         </div>}
                 </div>
             </div>

@@ -28,7 +28,7 @@ div.displayUserPosts{
 
 div.displayUserPosts > h4{
     font-family: ProximaNova;
-    font-weight: 400;
+    font-weight: bold;
 }
 
 @media screen and (max-width: 600px){

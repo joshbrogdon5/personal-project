@@ -77,11 +77,29 @@ button.saveButton:hover{
     box-shadow: none;
 }
 
+div.cartEmpty{
+    margin-top: 10px;
+    text-align: center;
+}
+
+div.cartEmpty > img{
+    width: 150px;
+    height: 150px;
+}
+
+div.cartEmpty > h1{
+    color: black;
+    font-weight: 700;
+}
+
 @media screen and (max-width: 600px){
     .mapDivCart{
-        width: 100%;
+        width: 90%;
     }
     .displayDiv{
         width: 100%;
+    }
+    .checkout{
+        width: 80%;
     }
 }
