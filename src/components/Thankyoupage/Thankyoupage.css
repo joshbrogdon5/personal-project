@@ -1,4 +1,10 @@
+div.thankyou-content-container{
+    border: 1px solid #EBEBE0;
+}
 
+div.thankyou-content-container:hover{
+    border: 1px solid #33B1EF;
+}
 
 button.ok-button:hover{
     width: 60% !important;

@@ -25,7 +25,7 @@ export default class Thankyou extends Component {
           height: '60vh',
           margin: 'auto',
           borderRadius: '4px',
-          border: '1px solid #EBEBE0',
+        //   border: '1px solid #EBEBE0',
           boxShadow: '4px 5px 8px'
       }
       const thankyouContainerStyle = {
@@ -71,7 +71,7 @@ export default class Thankyou extends Component {
                 <h3 className='enjoypurchase2'>Enjoy your purchase</h3>
             </div>
             <div className='button-container' style={buttonContainerStyle}>
-                <Link to='/dashboard' style={linkStyle}><button className='ok-button'style={buttonStyle}>Ok</button></Link>
+                <Link to='/storefront' style={linkStyle}><button className='ok-button'style={buttonStyle}>Ok</button></Link>
             </div>
         </div>
       </div>
