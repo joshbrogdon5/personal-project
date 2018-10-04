@@ -1,22 +1,9 @@
-.main{
-    background-image: url(./../../images/coolbackground2.jpg);
-    background-position: center;
-    background-position: 0px 0px;
-    background-repeat: repeat-x;
-    overflow: hidden;
-    animation-direction: alternate;
 
-    animation: mainAnimation 30s linear infinite;
-}
-@keyframes mainAnimation{
-    0% {background-position: 100% 0;}
-    50% {background-position: 0 0;}
-    100% {background-position: 100% 0;}
-}
+
 button.ok-button:hover{
-    width: 50% !important;
-    background-color: darkgrey !important;
+    width: 60% !important;
     transition: width 0.5s;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 600px){

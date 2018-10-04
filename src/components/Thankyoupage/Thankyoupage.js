@@ -7,7 +7,7 @@ import './Thankyoupage.css';
 export default class Thankyou extends Component {
   render() {
       const mainStyle = {
-          backgroundColor: '#343434',
+          backgroundColor: '#e1e1e1',
           width: '100%',
           height: '100vh',
           display: 'flex',
@@ -15,17 +15,18 @@ export default class Thankyou extends Component {
           alignContent: 'center'
       }
       const contentContainerStyle = {
-          backgroundColor: '#dfdfdf',
+          backgroundColor: '#fff',
           display: 'flex',
           flexDirection: 'column',
           alignContent: 'center',
           alignItems: 'center',
           textAlign: 'center',
-          width: '50%',
+          width: '60%',
           height: '60vh',
           margin: 'auto',
-          borderRadius: '5px',
-          boxShadow: '5px 8px'
+          borderRadius: '4px',
+          border: '1px solid #EBEBE0',
+          boxShadow: '4px 5px 8px'
       }
       const thankyouContainerStyle = {
           marginBottom: '50px',
@@ -40,11 +41,13 @@ export default class Thankyou extends Component {
           width: '20%'
       }
       const buttonStyle = {
-          width: '30%',
-          border: 'none',
-          borderRadius: '5px',
-          backgroundColor: 'grey',
-          cursor: 'pointer'
+          width: '40%',
+          border: '1px solid #e1e1e1',
+          borderRadius: '3px',
+          backgroundColor: '#33B1EF',
+          color: '#fff',
+          textShadow: 'rgba(0, 0, 0, 0.25) 0px -1px 0px',
+          fontSize: '1.1rem'
       }
       const imgContainerStyle = {
           marginTop: '5%',
