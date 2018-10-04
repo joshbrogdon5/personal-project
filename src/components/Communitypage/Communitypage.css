@@ -71,6 +71,10 @@ button.createPostButton:hover{
     transition: box-shadow .4s;
 }
 
+h5.postTitle{
+    border-bottom: 1px solid #BCBCBC;
+}
+
 @media screen and (max-width: 600px){
      div.displayPosts{
          width: 100%;

@@ -25,7 +25,6 @@ export default class Thankyou extends Component {
           height: '60vh',
           margin: 'auto',
           borderRadius: '4px',
-        //   border: '1px solid #EBEBE0',
           boxShadow: '4px 5px 8px'
       }
       const thankyouContainerStyle = {

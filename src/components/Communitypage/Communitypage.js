@@ -37,8 +37,8 @@ class Communitypage extends Component {
 
   render() {
       const imgStyle = {
-          height: '80px',
-          width: '80px',
+          height: '70px',
+          width: '70px',
           borderRadius: '50%'
       }
       let displayPosts = this.props.posts.map((e,i) => {
@@ -46,7 +46,7 @@ class Communitypage extends Component {
               <div className='postsMap' key={i}>
                 <h5 className='postTitle'>{e.post_title}</h5>
                 <img style={imgStyle} src={e.picture} />
-                <h6>By: {e.user_name}</h6>
+                <h6>{e.user_name}</h6>
                 <p>{e.post_content}</p>
               </div>
           )
