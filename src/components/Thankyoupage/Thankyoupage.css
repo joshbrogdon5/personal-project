@@ -6,6 +6,10 @@ button.ok-button:hover{
     cursor: pointer;
 }
 
+h3.enjoypurchase2{
+    display: none;
+}
+
 @media screen and (max-width: 600px){
     .main{
         background-position: center;
@@ -15,14 +19,21 @@ button.ok-button:hover{
         display: none;
     }
     div.thankyou-content-container{
-        width: 70% !important;
+        width: 90% !important;
         height: 50vh !important;
     }
     button.ok-button{
-        width: 60% !important;
+        width: 70% !important;
+        font-size: 1.3rem !important;
     }
     .checkmark{
-        width: 12vw !important;
+        width: 15vw !important;
         margin-top: 10px !important;
+    }
+    h1.thankyou-text{
+        font-size: 3rem;
+    }
+    h3.enjoypurchase2{
+        display: block;
     }
 }

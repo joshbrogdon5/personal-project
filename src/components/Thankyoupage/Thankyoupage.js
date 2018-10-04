@@ -47,7 +47,8 @@ export default class Thankyou extends Component {
           backgroundColor: '#33B1EF',
           color: '#fff',
           textShadow: 'rgba(0, 0, 0, 0.25) 0px -1px 0px',
-          fontSize: '1.1rem'
+          fontSize: '1.1rem',
+          transition: 'width 0.5s'
       }
       const imgContainerStyle = {
           marginTop: '5%',
@@ -67,6 +68,7 @@ export default class Thankyou extends Component {
             <div className='thankyou-container' style={thankyouContainerStyle}>
                 <h1 className='thankyou-text'>Thank You!</h1>
                 <h3 className='enjoypurchase'>We hope you enjoy your purchase</h3>
+                <h3 className='enjoypurchase2'>Enjoy your purchase</h3>
             </div>
             <div className='button-container' style={buttonContainerStyle}>
                 <Link to='/dashboard' style={linkStyle}><button className='ok-button'style={buttonStyle}>Ok</button></Link>
